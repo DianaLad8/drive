@@ -10,7 +10,7 @@ html(lang="ru")
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    meta(name="description", content="ProjectName — описание")
+    meta(name="description", content="Погнали - это сервис для поиска попутчиков в путешествиях")
     //- генерируйте favicon тут - https://realfavicongenerator.net/
     //- в подключение фавикон манифеста обязательно добавьте строчки crossorigin="use-credentials"
     //- используйте только для шрифта находящегося на первом экране
@@ -28,6 +28,18 @@ html(lang="ru")
       meta(property="og:url", content="https://24fortest.ru/")
       //- Введите описание
       meta(property="og:description", content="Простые и понятные решения в помощь разработчикам от команды Лига А")
+
+    link(rel="icon", type="image/png", href="img/favicon/favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/svg+xml", href="img/favicon/favicon.svg")
+    link(rel="shortcut icon", href="img/favicon/favicon.ico")
+    link(rel="apple-touch-icon", sizes="180x180", href="img/favicon/apple-touch-icon.png")
+    link(rel="manifest", crossorigin="use-credentials", href="img/favicon/site.webmanifest")
+
+    link(rel="preload", href="fonts/roboto-bold.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-medium.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-regular.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-light.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-black.woff2", as="font", crossorigin="anonymous")
 
     link(rel="stylesheet", href="css/style.min.css")
 

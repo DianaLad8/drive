@@ -17,7 +17,7 @@ html {
   font-size: $fz-default;
   line-height: 24px;
   font-family: $ff-placeholder;
-  color: $color-default-black;
+  color: $color-default-blue;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,7 +35,7 @@ body {
 }
 
 a {
-  color: $color-default-black;
+  color: $color-default-blue;
   text-decoration: none;
 }
 
@@ -59,7 +59,7 @@ textarea {
 input:-webkit-autofill {
   box-shadow: inset 0 0 0 1000px $color-default-white;
 
-  -webkit-text-fill-color: $color-default-black;
+  -webkit-text-fill-color: $color-default-blue;
 }
 
 // firefox placeholder \ invalid fix + ios bdrs
