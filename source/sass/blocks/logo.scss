@@ -1,12 +1,21 @@
 .logo {
   position: relative;
 
-  width: 200px;
+  min-width: 200px;
   height: 50px;
 
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+
+  @include vp-1023 {
+    min-width: 168px;
+    height: 42px;
+  }
+
+  @include vp-767 {
+    min-width: 96px;
+    height: 15px;
+  }
 
   &__fond {
     position: absolute;
@@ -15,19 +24,37 @@
     width: 188px;
     height: 100%;
 
+    @include vp-1023 {
+      width: 154px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+
     img {
       width: 100%;
-      height: 100%;
       object-fit: cover;
     }
   }
 
   &__text {
+    margin-left: auto;
+
     font-size: 24px;
     font-weight: 900;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.12em;
     color: $color-default-white;
     text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    z-index: 2;
+
+    @include vp-1023 {
+      font-size: 21px;
+    }
+
+    @include vp-767 {
+      text-shadow: none;
+      font-size: 18px;
+    }
   }
 }

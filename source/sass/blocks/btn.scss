@@ -1,14 +1,33 @@
 .btn {
-  display: inline-flex;
-  padding: 10px 20px;
+  padding: 33px;
+  height: 80px;
+  width: fit-content;
+  min-width: 284px;
 
-  color: $color-default-white;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 33px;
+
+  color: $color-catalina-blue;
+  font-size: 24px;
+  font-weight: 700;
 
   background-color: $color-pale-blue;
+  border-radius: 20px;
   border: none;
   cursor: pointer;
 
   transition: opacity $trans-default;
+
+  @include vp-1023 {
+    min-width: 276px;
+  }
+
+  @include vp-767 {
+    min-width: 263px;
+    height: 76px;
+  }
 
   &--red {
     background-color: $color-light-coral;

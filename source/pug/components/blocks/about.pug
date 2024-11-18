@@ -1,0 +1,19 @@
+mixin about()
+  section.about
+    .container
+      .about__fond
+      .about__wrapper
+          .about__block
+            h2.about__title О сервисе
+            p.about__text Любое путешествие веселее с&nbsp;попутчиками, которые на&nbsp;одной волне с&nbsp;тобой! Делитесь своими идеями путешествий и&nbsp;черпайте вдохновение в&nbsp;чужих.
+            p.about__subtext А&nbsp;если найдете кого-то близкого по&nbsp;духу&nbsp;&mdash; скорее зовите в&nbsp;совместный трип!
+            a.about__button.btn(href="#", target="_blank", rel="nofollow noopener noreferrer",aria-label="Просто ссылка") Подробнее
+              +icon("icon-about-button", 11, 14)
+          .about__image
+            picture
+              source(type="image/webp", media="(min-width: 1023px)", srcset="./img/content/about-image-desktop.webp 1x, ./img/content/about-image-desktop@2x.webp 2x", width="654", height="665")
+              source(type="image/webp", media="(min-width: 768px)", srcset="./img/content/about-image-tablet.webp 1x, ./img/content/about-image-tablet@2x.webp 2x", width="368", height="546")
+              source(type="image/webp", srcset="./img/content/about-image-mobile.webp 1x, ./img/content/about-image-mobile@2x.webp 2x", width="192", height="255")
+              source(type="image/png", media="(min-width: 1023px)", srcset="./img/content/about-image-desktop.png 1x, ./img/content/about-image-desktop@2x.png 2x", width="654", height="665")
+              source(type="image/png", media="(min-width: 768px)", srcset="./img/content/about-image-tablet.png 1x, ./img/content/about-image-tablet@2x.png 2x", width="368", height="546")
+              img(src="./img/content/about-image-mobile.png", srcset="./img/content/about-image-mobile@2x.png 2x", width="292", height="353", alt="Объёмное изображение мобильного телефона с аккаунтами возможных попутчиков.")

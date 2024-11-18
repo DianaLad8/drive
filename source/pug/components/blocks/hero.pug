@@ -1,0 +1,41 @@
+mixin hero()
+  -
+    const heroTasks = [
+      {
+        number: 1,
+        text: "Выберите направление"
+      },
+      {
+        number: 2,
+        text: "Изучите идеи путешественников"
+      },
+      {
+        number: 3,
+        text: "Находите тех, кто похож на вас"
+      },
+      {
+        number: 4,
+        text: "Путешествуйте вместе!"
+      },
+    ]
+  section.hero
+    .container
+      .hero__fond
+        picture
+          source(type="image/webp", srcset="./img/content/hero-fond.webp 1x, ./img/content/hero-fond@2x.webp 2x", width="1440", height="750")
+          +img("content", "hero-fond", "png", 1440, 750, "Фон с глобусом.")
+      .hero__wrapper
+        h2.hero__title В&nbsp;путешествие с&nbsp;крутыми попутчиками!
+        .hero__image
+          picture
+            source(type="image/webp", media="(min-width: 1023px)", srcset="./img/content/hero-image-desktop.webp 1x, ./img/content/hero-image-desktop@2x.webp 2x", width="431", height="649")
+            source(type="image/webp", media="(min-width: 768px)", srcset="./img/content/hero-image-tablet.webp 1x, ./img/content/hero-image-tablet@2x.webp 2x", width="437", height="530")
+            source(type="image/webp", srcset="./img/content/hero-image-mobile.webp 1x, ./img/content/hero-image-mobile@2x.webp 2x", width="192", height="255")
+            source(type="image/png", media="(min-width: 1023px)", srcset="./img/content/hero-image-desktop.png 1x, ./img/content/hero-image-desktop@2x.png 2x", width="431", height="649")
+            source(type="image/png", media="(min-width: 768px)", srcset="./img/content/hero-image-tablet.png 1x, ./img/content/hero-image-tablet@2x.png 2x", width="437", height="530")
+            img(src="./img/content/hero-image-mobile.png", srcset="./img/content/hero-image-mobile@2x.png 2x", width="192", height="255", alt="Схематический рисунок мужчины с чемоданом.")
+      ul.hero__tasks(data-tasks)
+        each task in heroTasks
+          li.hero__task(data-task=task.number)
+            p= task.text
+            span= task.number
