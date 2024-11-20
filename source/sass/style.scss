@@ -3,7 +3,7 @@
 
 @import "vendor/normalize";
 // Swiper 8.4.7
-// @import "vendor/swiper";
+@import "vendor/swiper";
 
 // Global
 // ---------------------------------
@@ -24,6 +24,8 @@
 @import "blocks/main-nav";
 @import "blocks/hero";
 @import "blocks/about";
+@import "blocks/directions";
+@import "blocks/slide";
 @import "blocks/footer";
 @import "blocks/modal";
 @import "blocks/btn";

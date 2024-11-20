@@ -52,6 +52,15 @@
 
   &__block {
     display: grid;
+    grid-template-rows: 81px minmax(100px, max-content) minmax(100px, max-content);
+
+    @include vp-1023 {
+      grid-template-rows: 87px minmax(102px, auto) minmax(102px, auto);
+    }
+
+    @include vp-767 {
+      grid-template-rows: 47px minmax(102px, auto) minmax(85px, auto);
+    }
   }
 
   &__title {
@@ -72,7 +81,7 @@
   }
 
   &__text {
-    margin-top: 35px;
+    margin: 0;
     margin-bottom: 58px;
     max-width: 642px;
     font-weight: 500;
@@ -81,7 +90,6 @@
     color: $color-default-white;
 
     @include vp-1023 {
-      margin-top: 43px;
       margin-bottom: 104px;
       padding-left: 5px;
       max-width: 446px;
@@ -89,7 +97,6 @@
     }
 
     @include vp-767 {
-      margin-top: 22px;
       margin-bottom: 38px;
       padding-left: 0;
       min-width: 269px;
@@ -100,7 +107,7 @@
   }
 
   &__subtext {
-    margin-top: 0;
+    margin: 0;
     margin-bottom: 137px;
     max-width: 73%;
 
