@@ -1,0 +1,203 @@
+.card {
+  position: relative;
+
+  width: 285px;
+  min-height: 481px;
+  display: grid;
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  @include vp-767 {
+    max-width: 285px;
+    width: 100%;
+    min-height: 428px;
+
+    border-radius: 10px;
+  }
+
+  &__fond {
+    position: relative;
+    width: 100%;
+    height: 265px;
+    z-index: -1;
+
+    @include vp-1023 {
+      height: 284px;
+    }
+
+    @include vp-767 {
+      height: 270px;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 285px;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+
+  &__level {
+    position: absolute;
+    top: 23px;
+    left: 22px;
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include vp-767 {
+      top: 17px;
+      left: 17px;
+    }
+
+    svg {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      inset: 0;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+      color: $color-default-white;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "level";
+      color: $color-default-white;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      text-decoration: overline;
+      z-index: 1;
+    }
+  }
+
+  &__content {
+    padding: 48px 15px 24px;
+    position: relative;
+    align-self: end;
+    min-height: 215px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-default-white;
+
+    @include vp-1023 {
+      padding-top: 24px;
+      min-height: 202px;
+    }
+
+    @include vp-767 {
+      padding-top: 25px;
+      min-height: 158px;
+
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        text-align: center;
+        color: $color-charcoal;
+      }
+  }
+
+  &__flags {
+    position: absolute;
+    width: fit-content;
+    top: -12px;
+    left: 50%;
+    display: flex;
+    gap: 20px;
+    transform: translateX(-50%);
+
+    @include vp-767 {
+      top: -9px;
+    }
+  }
+
+  &__name {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -13%;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 92%;
+      text-align: center;
+      color: $color-catalina-blue;
+
+      @include vp-767 {
+        font-size: 21px;
+        line-height: 100%
+      }
+    }
+
+    &__icons {
+      width: 130px;
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  p {
+    margin: 26px 0;
+
+    @include vp-767 {
+      margin: 16px 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 112%;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 15px;
+  }
+
+  &:last-child {
+    align-self: flex-end;
+
+    .card__flags span:last-child {
+      display: none;
+    }
+  }
+
+  &:first-child {
+    align-self: flex-start;
+
+    .card__icons svg:nth-child(2n) {
+      opacity: 0.15;
+    }
+  }
+
+  @include hover-focus {
+    cursor: pointer;
+    box-shadow: 0 4px 20px 0 rgba(255, 254, 254, 0.5);
+  }
+}

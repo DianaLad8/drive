@@ -1,0 +1,70 @@
+mixin companions()
+  -
+    const companionCards = [
+      {
+        name: "Таня Фирсова",
+        fond: "photo-tanya",
+        level: 99,
+        levelIcon: "circle99",
+        fondMobile: "thailand-mobile",
+        text: "#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи",
+        flag1: "sri-lanka-flag",
+        country1: "Шри-Ланка",
+        flag2: "thailand-flag",
+        country2: "Таиланд",
+        flag3: "seychelles-flag",
+        country3: "Сейшелы",
+        marker: "marker-red"
+      },
+      {
+        name: "Петя Демин",
+        fond: "photo-petya",
+        level: 80,
+        levelIcon: "circle80",
+        fondMobile: "france-mobile",
+        text: "#бургер #бар #футбол #концерт #крафт",
+        flag1: "belgium-flag",
+        country1: "Бельгия",
+        flag2: "czech-flag",
+        flag3: "seychelles-flag",
+        country3: "Сейшелы",
+        country2: "Чехия",
+        marker: "marker-green"
+      },
+    ]
+
+  section.companions
+    .container
+      .companions__fond
+      .companions__block
+        h2.companions__title Попутчики
+        p.companions__text Все мы&nbsp;индивидуальны и&nbsp;у&nbsp;каждого свой взгляд на&nbsp;идеальный отдых. Одному нужен пляж и&nbsp;коктейль, а&nbsp;другому маршрут для хайкинга.
+        p.companions__subtext Теперь можно легко найти единомышленников!
+      ul.companions__cards
+        each card in companionCards
+          li.companions__card.card
+            .card__fond
+              +img("content", card.fond, "png", 286, 286, card.name)
+            .card__level
+              +icon(card.levelIcon, 60, 60)
+              span= card.level
+            .card__content
+              .card__flags
+                span
+                  +img("content", card.flag1, "png", 35, 25, `флаг страны - ${card.country1}`)
+                span
+                  +img("content", card.flag2, "png", 35, 25, `флаг страны - ${card.country2}`)
+                span
+                  +img("content", card.flag3, "png", 35, 25, `флаг страны - ${card.country3}`)
+              .card__name
+                +icon(card.marker, 9, 8)
+                span= card.name
+              p= card.text
+              .card__icons
+                +icon("airplane", 21, 20)
+                +icon("bus", 21, 20)
+                +icon("bike", 21, 20)
+                +icon("men", 21, 20)
+      a.companions__button.btn(href="catalog.html", target="_blank", rel="nofollow noopener noreferrer",aria-label="Просто ссылка") Показать всех
+        +icon("icon-about-button", 11, 14)
+

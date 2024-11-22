@@ -1,16 +1,31 @@
 .directions {
+  margin-bottom: 47px;
   position: relative;
+
+  @include vp-767 {
+    margin-bottom: 0;
+  }
 
   .container {
     padding-top: 67px;
     padding-left: 61px;
     padding-right: 60px;
+    padding-bottom: 50px;
     display: grid;
-    grid-template-columns:  623px 1fr;
+    grid-template-columns: minmax(460px, 623px) minmax(480px, 518px);
     grid-template-areas:
       "slider block"
       "slider button";
-    gap: 13.5%;
+    justify-content: space-between;
+    column-gap: 4%;
+
+
+    @include vp-1279 {
+      padding: 0 40px;
+
+      padding-top: 67px;
+      padding-bottom: 50px;
+    }
 
     @include vp-1023 {
       padding: 53px 60px 60px 73px;
@@ -20,7 +35,8 @@
         "slider"
         "button";
       gap: 19px;
-      }
+    }
+
 
     @include vp-767 {
       padding: 52px 25px;
@@ -32,7 +48,7 @@
     position: absolute;
     top: -60px;
     left: 0;
-    height: calc(100% + 177px);
+    height: calc(100% + 171px);
     width: 52%;
     background-color: $color-solitude;
     z-index: -15;
@@ -52,10 +68,14 @@
   }
 
   &__block {
+    margin-left: auto;
     padding-top: 24px;
     grid-area: block;
+    width: 100%;
 
     @include vp-1023 {
+      width: 100%;
+
       padding-top: 0;
     }
 
@@ -91,6 +111,7 @@
   }
 
   &__text {
+    width: 100%;
     font-weight: 500;
     font-size: 23px;
     line-height: 143%;
@@ -105,13 +126,20 @@
   }
 
   &__slider {
-    margin-left: 0;
-    margin-bottom: 62px;
-    padding-left: 0;
+    position: relative;
+
+    padding-right: 10px;
+    padding-left: 10px;
 
     grid-area: slider;
     max-width: 650px;
+    width: 100%;
     max-height: 458px;
+
+    @include vp-1023 {
+      padding-right: 0;
+      margin-left: -10px;
+    }
 
     @include vp-767 {
       margin-bottom: 0;
@@ -120,6 +148,9 @@
       width: 100%;
       min-width: 100%;
       height: 100%;
+      max-height: 100%;
+      min-height: 632px;
+
     }
   }
 
@@ -145,7 +176,7 @@
     position: absolute;
     width: 100%;
     height: 81px;
-    bottom: 0;
+    bottom: -22px;
     left: 0;
     z-index: 2;
 
@@ -164,7 +195,8 @@
     padding: 0;
     padding-top: 29px;
 
-    min-width: 642px;
+    max-width: 642px;
+    width: 100%;
 
     max-height: 100%;
 
@@ -175,19 +207,21 @@
 
     @include vp-767 {
       margin-top: 0;
+      padding-top: 15px;
+
       flex-direction: column;
 
       max-width: 100%;
       width: 100%;
       min-width: 270px;
       height: 100%;
-      min-height: 649px;
+      min-height: 632px;
       gap: 8px;
     }
   }
 
   &__button.btn {
-    margin-top: 20px;
+    margin-top: 131px;
     margin-left: 6px;
 
     grid-area: button;
@@ -195,17 +229,18 @@
     min-width: 298px;
 
     @include vp-1023 {
-      margin-top: 26px;
+      margin-top: 88px;
       padding-right: 20px;
       min-width: 97%;
     }
 
     @include vp-767 {
       margin-top: 0;
+      margin-left: 0;
       width: 97%;
 
-      padding: 17px;
-      padding-right: 29px;
+      padding: 20px;
+      padding-right: 25px;
       height: 65px;
       font-size: 18px;
       border-radius: 10px;

@@ -1,11 +1,9 @@
 import Swiper from 'swiper';
 
-// import {Freemode} from 'swiper/modules';
-
 const indexPage = document.querySelector('[data-index]');
 
 
-const swiperDirections = new Swiper('.swiper', {
+const swiperDirections = new Swiper('.directions__slider', {
   width: 619,
   height: 140,
   initialSlide: 1,
@@ -14,10 +12,10 @@ const swiperDirections = new Swiper('.swiper', {
   slidesPerGroup: 3,
   spaceBetween: 10,
   direction: 'vertical',
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: false
-  // },
+  autoplay: {
+    delay: 3000,
+    // disableOnInteraction: false
+  },
 });
 
 const initDirectionsSlider = () => {
