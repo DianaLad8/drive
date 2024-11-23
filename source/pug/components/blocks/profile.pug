@@ -1,0 +1,33 @@
+mixin profile()
+  -
+    const profileTarif = [
+      {
+        text: "Базовое размещение",
+      },
+      {
+        text: "Вывод на первых позициях",
+      },
+      {
+        text: "Кастомный цвет карточки",
+      },
+    ]
+  section.profile
+    .container
+      .profile__fond
+      h2.profile__title Добавьте свой профиль
+      .profile__wrapper
+        ul.profile__tarifs
+          each tarif in profileTarif
+            li.profile__tarif
+              p= tarif.text
+        .profile__sign
+          p.profile__slogan
+            b Бесплатно
+            span 99 руб./мес
+            span 59 руб./мес
+          .profile__image
+            +img("content", "profile", "png", 286, 286, "Пример")
+      .profile__biz
+        span.profile__icon-biz
+          +icon("biz", 29, 29)
+        +btn({text: "Показать тарифы для бизнеса"})(data-open-modal="feedback").profile__modal-button

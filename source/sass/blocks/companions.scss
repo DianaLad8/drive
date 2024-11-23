@@ -1,5 +1,10 @@
   .companions {
     position: relative;
+    margin-bottom: 66px;
+
+    @include vp-1023 {
+      margin-bottom: 18px;
+    }
 
     .container {
       padding-top: 67px;
@@ -147,7 +152,7 @@
         font-size: 14px;
         line-height: 157%;
         letter-spacing: -0.02em;
-        white-space: nowrap;
+        // white-space: nowrap;
       }
     }
 

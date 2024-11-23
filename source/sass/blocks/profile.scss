@@ -1,0 +1,320 @@
+.profile {
+  .container {
+    position: relative;
+    padding-top: 47px;
+    padding-bottom: 60px;
+    display: grid;
+
+    @include vp-767 {
+      padding-top: 18px;
+    }
+  }
+
+  &__fond {
+    position: absolute;
+    height: calc(100% + 60px);
+    width: 100%;
+    top: -60px;
+    left: 0;
+    background-color: $color-solitude;
+    border-radius: 0 0 60px 60px;
+    z-index: -20;
+
+    @include vp-767 {
+      height: calc(100% + 30px);
+
+      border-radius: 0 0 30px 30px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-left: -38px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 95px;
+    line-height: 95%;
+    font-variant: all-small-caps;
+    color: $color-accent-main;
+
+    @include vp-1023 {
+      margin: 0;
+    }
+
+    @include vp-767 {
+      font-size: 37px;
+      line-height: 76%;
+    }
+  }
+
+  &__wrapper {
+    padding-top: 105px;
+    display: grid;
+    grid-template-columns: 1fr 585px;
+    align-items: center;
+
+    @include vp-1023 {
+      padding-top: 26px;
+      grid-template-columns: 1fr 198px;
+      align-items: start;
+    }
+
+    @include vp-767 {
+      margin-bottom: 32px;
+      padding-top: 32px;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      gap: 37px;
+    }
+  }
+
+  &__tarifs {
+    margin: 0;
+    padding-top: 17px;
+    padding-left: 98px;
+    list-style-type: none;
+
+    display: grid;
+    gap: 15px;
+
+    @include vp-1023 {
+      padding-top: 34px;
+      padding-left: 94px;
+      gap: 13px;
+    }
+    @include vp-767 {
+      padding: 0;
+      gap:5px;
+    }
+  }
+
+  &__tarif {
+    position: relative;
+    max-width: 870px;
+    width: calc(100% + 12px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 100%;
+
+    border-bottom: 1px solid $color-solitude-second;
+    counter-increment: tarif 1;
+
+    @include vp-767 {
+      width: calc(100% - 60px);
+      font-size: 16px;
+    }
+
+    &::before {
+      content: counter(tarif) "";
+      position: absolute;
+      left: -95px;
+      top: 0;
+      width: 72px;
+      height: 70px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      font-size: 28px;
+      line-height: 100%;
+      color: $color-default-white;
+      border-radius: 50%;
+      background-color: $color-picton-blue;
+
+      @include vp-767 {
+        padding-top: 9px;
+        right: -60px;
+        left: auto;
+        width: 37px;
+        height: 35px;
+        font-size: 16px;
+      }
+    }
+
+    p {
+      margin: 0;
+      padding-top: 12px;
+      padding-bottom: 18px;
+
+      @include vp-1023 {
+        padding-top: 10px;
+        padding-bottom: 14px;
+      }
+    }
+  }
+
+  &__tarif:first-child{
+    padding-top: 18px;
+    border-top: 1px solid $color-solitude-second;
+
+    @include vp-767 {
+      padding-top: 0;
+    }
+  }
+  &__tarif:nth-child(3n + 2) {
+    &::before {
+      background-color: $color-jordy-blue;
+    }
+  }
+
+  &__tarif:nth-child(3n) {
+    &::before {
+      background-color: $color-pale-blue;
+    }
+  }
+
+  &__sign {
+    padding: 62px 47px 69px 81px;
+    width: 585px;
+    height: 333px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    background-color: $color-zodiac-blue;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transform: translateX(12px);
+
+    @include vp-1279 {
+      transform: translateX(0);
+    }
+
+    @include vp-1023 {
+      padding: 23px 27px;
+      padding-bottom: 18px;
+      width: 198px;
+      height: 285px;
+      flex-direction: column;
+    }
+
+    @include vp-767 {
+      justify-self: center;
+      padding: 16px 15px;
+      width: 263px;
+      height: 113px;
+      flex-direction: row;
+    }
+  }
+
+  &__slogan {
+    margin: 0;
+    min-height: 123px;
+    margin-bottom: auto;
+    padding-top: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    gap: 11px;
+
+    font-weight: 700;
+    font-size: 41px;
+    line-height: 68%;
+    font-variant: all-small-caps;
+    text-align: right;
+    color: $color-default-white;
+
+    @include vp-1023 {
+      padding-top: 0;
+      gap: 7px;
+
+      font-size: 28px;
+      line-height: 100%
+    }
+
+    b {
+      margin-bottom: 15px;
+      font-weight: 700;
+
+      @include vp-767 {
+        font-size: 20px;
+        line-height: 80%;
+      }
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 100%;
+      text-align: center;
+      font-variant: normal;
+
+      @include vp-1023 {
+        font-size: 24px;
+        line-height: 117%;
+      }
+
+      @include vp-767 {
+        font-size: 16px;
+        line-height: 100%;
+      }
+    }
+  }
+
+  &__image {
+    width: 200px;
+
+    @include vp-1023 {
+      width: 100px;
+    }
+
+    @include vp-767 {
+      width: 81px;
+    }
+  }
+
+  &__biz {
+    display: flex;
+
+    @include vp-1023 {
+      margin-top: -15px;
+    }
+
+    @include vp-767 {
+      justify-self: center;
+    }
+
+  }
+
+  &__icon-biz {
+    padding-top: 20px;
+
+    width: 72px;
+    height: 70px;
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+
+    border-radius: 50%;
+    background-color: $color-lavender;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__modal-button.btn {
+    padding-left: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: $color-zodiac-blue;
+    background-color: $color-transparent;
+
+    @include vp-1023 {
+      padding-left: 15px;
+    }
+
+    @include vp-767 {
+      height: 100%;
+      padding: 10px;
+      padding-left: 19px;
+      padding-bottom: 0;
+      font-size: 16px;
+    }
+  }
+}

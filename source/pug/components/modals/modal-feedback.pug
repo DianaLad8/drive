@@ -1,2 +1,26 @@
 mixin modal-feedback()
-  p.modal__description Обычная модалка
+  -
+    const modalTarif = [
+      {
+        text: "Реклама у блоггера",
+        price: "300 000 руб./пост",
+      },
+      {
+        text: "Накрутка подписчиков",
+        price: "от 1 руб./шт.",
+      },
+      {
+        text: "Лайки от ботов",
+        price: "от 20 коп./лайк",
+      },
+      {
+        text: "Ваш продакт-плейсмент",
+        price: "Индивидуально",
+      },
+    ]
+  h2.modal__title Бизнес-тарифы
+  ul.modal__tarifs
+    each tarif in modalTarif
+      li.modal__tarif
+        span.modal__text= tarif.text
+        span.madal__price= tarif.price
