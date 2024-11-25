@@ -1,0 +1,42 @@
+mixin form()
+  -
+    const formContacts = [
+      {
+        href: "tel:88005558628",
+        text: "8 800 555-86-28",
+        icon: "phone-form",
+        width: 36,
+        height: 34,
+      },
+      {
+        href: "#",
+        text: "mail@htmlacademy.ru",
+        icon: "mail-form",
+        width: 37,
+        height: 26,
+      },
+    ]
+  section.form
+    .form__fond
+    .form__wrapper
+      h2.form__title Заинтересовались?
+      p.form__text Зарегистрируйтесь, это быстро и&nbsp;бесплатно! Уже зарегистрированы? Тогда скорее &nbsp;
+        a.form__link(href="#") авторизуйтесь.
+      form(action="https://echo.htmlacademy.ru/", method="POST")
+          .form__input
+            +custom-input({
+              inputType: "email",
+              inputLabel: "Введите вашу почту",
+              inputName: "user-mail",
+              inputPlaceholder: "E-mail",
+            })
+            button.form__button-submit.btn(type="subnit", aria-label="Регистрация") Регистрация
+              +icon("icon-about-button", 11, 14)
+      p.form__subtext Остались вопросы? Мы&nbsp;с&nbsp;радостью на&nbsp;них ответим!
+      ul.form__contacts
+        each contact in formContacts
+          li.form__contact
+            a.form__button-contact
+              .form__contact-icon
+                +icon(contact.icon, contact.width, contact.height)
+              span.form__contact-text= contact.text

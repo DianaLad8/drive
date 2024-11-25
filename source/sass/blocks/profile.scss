@@ -1,12 +1,18 @@
 .profile {
   .container {
     position: relative;
-    padding-top: 47px;
+    padding-top: 100px;
     padding-bottom: 60px;
     display: grid;
 
+    @include vp-1023 {
+      padding-top: 47px;
+      padding-bottom: 55px;
+    }
+
     @include vp-767 {
       padding-top: 18px;
+      padding-bottom: 24px;
     }
   }
 
@@ -16,11 +22,15 @@
     width: 100%;
     top: -60px;
     left: 0;
-    background-color: $color-solitude;
     border-radius: 0 0 60px 60px;
     z-index: -20;
 
+    @include vp-1023 {
+      background-color: $color-solitude;
+    }
+
     @include vp-767 {
+      top: -30px;
       height: calc(100% + 30px);
 
       border-radius: 0 0 30px 30px;
@@ -48,7 +58,7 @@
   }
 
   &__wrapper {
-    padding-top: 105px;
+    padding-top: 83px;
     display: grid;
     grid-template-columns: 1fr 585px;
     align-items: center;
@@ -268,6 +278,8 @@
   }
 
   &__biz {
+    margin-top: -12px;
+    margin-left: 2px;
     display: flex;
 
     @include vp-1023 {
