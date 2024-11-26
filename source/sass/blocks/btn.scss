@@ -33,6 +33,11 @@
     background-color: $color-light-coral;
   }
 
+  &--trans {
+    background-color: $color-transparent;
+    border: 3px solid $color-accent-main;
+  }
+
   &:disabled {
     opacity: 0.5;
 
