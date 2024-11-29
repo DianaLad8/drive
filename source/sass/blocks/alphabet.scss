@@ -1,0 +1,62 @@
+.alphabet {
+  position: relative;
+  background-color: $color-solitude;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  @include vp-1023 {
+    grid-template-columns: repeat(5, 80px);
+    background-color: $color-lavender;
+  }
+
+  @include vp-767 {
+    padding: 0 25px;
+    padding-bottom: 358px;
+    grid-template-columns: repeat(5, 43px);
+    gap: 1px;
+  }
+
+  &__button {
+    margin-bottom: 21px;
+
+    @include vp-767 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    @include vp-1023 {
+      position: absolute;
+      top: 6px;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+
+      display: none;
+
+      @include vp-767 {
+        top: 217px;
+        left: 25px;
+        width: 137px;
+      }
+    }
+  }
+
+  &__item {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include vp-767 {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 137%;
+    }
+  }
+
+  &__button.is-active + div {
+    display: flex;
+    flex-direction: column;
+  }
+}

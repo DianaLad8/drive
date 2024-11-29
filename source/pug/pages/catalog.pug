@@ -10,10 +10,12 @@ block variables
   - const currentUrl = "gifts.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
-  main
-    h1.visually-hidden Страница победителей проекта "Пакет"
+  main(data-catalog)
     //- все блоки вставляются из папки pug/components/blocks
-    +map()
+    +head-catalog()
+    +countries()
+    +profile()
+
 
 //- block modals
 //-   div(data-overlay)

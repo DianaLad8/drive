@@ -6,10 +6,10 @@ const indexPage = document.querySelector('[data-index]');
 const swiperDirections = new Swiper('.directions__slider', {
   width: 619,
   height: 140,
-  initialSlide: 1,
+  initialSlide: 0,
   loop: true,
   slidesPerView: 1,
-  slidesPerGroup: 3,
+  slidesPerGroup: 1,
   spaceBetween: 10,
   direction: 'vertical',
   autoplay: {

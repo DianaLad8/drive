@@ -38,6 +38,86 @@
     border: 3px solid $color-accent-main;
   }
 
+  &--line {
+    padding: 0;
+    border-radius: 4px;
+    width: 288px;
+    height: 8px;
+    background: $color-picton-blue;
+
+    @include vp-767 {
+      border-radius: 4px;
+      width: 172px;
+      max-width: 172px;
+      min-width: 172px;
+      height: 5px;
+      background: $color-default-white;
+    }
+  }
+
+  &--text {
+    padding: 0;
+    width: fit-content;
+    min-width: fit-content;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $color-accent-main;
+    background-color: $color-transparent;
+
+    opacity: 0.3;
+
+    @include vp-767 {
+      height: 27px;
+      font-size: 16px;
+      line-height: 125%;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &--text.is-active {
+    opacity: 1;
+  }
+
+  &--letter {
+    padding: 0;
+    width: fit-content;
+    min-width: fit-content;
+
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $color-accent-main;
+    background-color: $color-transparent;
+
+    opacity: 0.3;
+
+    @include vp-767 {
+      display: flex;
+      justify-content: center;
+      width: 42px;
+      min-width: 42px;
+      height: 39px;
+      font-size: 14px;
+      line-height: 100%;
+      background-color: $color-default-white;
+      border-radius: 0;
+      opacity: 1;
+    }
+  }
+
+  &--letter.is-active {
+    opacity: 1;
+
+    @include vp-767 {
+      color: $color-default-white;
+      background-color: $color-catalina-blue;
+    }
+  }
+
   &:disabled {
     opacity: 0.5;
 

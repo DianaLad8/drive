@@ -1,0 +1,45 @@
+mixin filter()
+  -
+    const filterButtons = [
+      {
+        filter: "Европа",
+        continent: "europe",
+      },
+      {
+        filter: "Азия",
+        continent: "asia",
+      },
+      {
+        filter: "Америка",
+        continent: "america",
+      },
+      {
+        filter: "Острова",
+        continent: "islands",
+      },
+      ]
+  .filter
+    +btn({text: "", type: "button"})(aria-label="показать все страны", data-countries-toggle).btn--line.filter__button-line
+    .filter-buttons
+      .filter-buttons__wrapper
+        .filter-buttons__subtitle(data-countries-subtitle)
+          .filter-buttons__icon
+            +icon("filter", 23, 15)
+          span.filter-buttons__text Фильтрация по странам:
+        .filter-buttons__buttons
+          each button, index in filterButtons
+            - const currentIndex = index === 0
+            if (currentIndex)
+              +btn({text: button.filter, type: "button"})(data-filter=button.continent).btn--text.filter-buttons__filter.is-active
+            else
+              +btn({text: button.filter, type: "button"})(data-filter=button.continent).btn--text.filter-buttons__filter
+        .filter-buttons__toggle.filter-buttons__toggle--top(data-countries-toggle-main, data-countries-toggle)
+          +btn({text: "показать все", type: "button"})(data-countries-toggle-text).btn--text
+          .filter-buttons__toggle-icon
+            +icon("points", 33, 33)
+    .filter__list(data-countries-list)
+      +alphabet()
+      .filter-buttons__toggle.filter-buttons__toggle--close(data-countries-toggle)
+        +btn({text: "свернуть", type: "button"}).btn--text.filter-buttons__toggle.is-active
+        +icon("icon-close", 24, 24)
+

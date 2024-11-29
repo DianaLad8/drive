@@ -1,0 +1,48 @@
+.countries {
+  margin-bottom: 100px;
+  position: relative;
+  background-color: $color-solitude;
+
+  @include vp-1023 {
+    border-radius: 0 0 60px 60px;
+    background-color: $color-lavender;
+  }
+
+  @include vp-767 {
+    border-radius: 0 0 20px 20px;
+  }
+
+  .container {
+    padding-bottom: 102px;
+
+    @include vp-767 {
+      padding-top: 18px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__fond {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: $color-catalina-blue;
+    border-radius: 0 0 60px 60px;
+    z-index: 1;
+
+    @include vp-1023 {
+      height: 60px;
+    }
+
+    @include vp-767 {
+      height: 15px;
+
+      border-radius: 0 0 30px 30px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}

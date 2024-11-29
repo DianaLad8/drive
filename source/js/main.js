@@ -5,6 +5,9 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initHeroTasks} from './modules/gsap/init-hero-tasks';
 import {initDirectionsSlider} from './modules/swiper/init-directions-slider';
+import {toggleCountriesList} from './modules/filter-countries/toggle-countries-list';
+import {toggleLetterAlphabet} from './modules/filter-countries/toggle-letter-alphabet';
+import {initFilterCountries} from './modules/filter-countries/init-filter-countries';
 
 // ---------------------------------
 
@@ -31,6 +34,9 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     initHeroTasks();
     initDirectionsSlider();
+    toggleCountriesList();
+    toggleLetterAlphabet();
+    initFilterCountries();
   });
 });
 

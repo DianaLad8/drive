@@ -1,0 +1,203 @@
+.filter-buttons {
+  padding: 88px 8px 36px;
+
+  @include vp-1023 {
+    padding: 92px 12px 24px 31px;
+  }
+
+  @include vp-767 {
+    padding: 0;
+    padding-right: 4px;
+    padding-top: 15px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
+    @include vp-767 {
+      position: relative;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+
+    @include vp-1023 {
+      display: none;
+    }
+
+    @include vp-767 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      gap: 13px;
+    }
+  }
+
+  &__subtitle.is-open {
+    @include vp-767 {
+      top: 5px;
+      width: 163px;
+      align-items: flex-start;
+    }
+  }
+
+
+  &__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $color-accent-main;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 112%;
+    }
+  }
+
+  &__buttons {
+    margin-right: auto;
+    min-width: 391px;
+    justify-content: space-between;
+    display: flex;
+
+    @include vp-1023 {
+      min-width: 379px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__buttons.is-open {
+    @include vp-767 {
+      padding: 50px 25px 0;
+      width: 100%;
+      order: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    @include vp-1023 {
+      padding-right: 15px;
+      gap: 48px;
+    }
+
+    @include vp-767 {
+      padding-right: 0;
+
+      &--top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 25px;
+        padding-right: 0;
+      }
+
+      button {
+        display: none;
+      }
+    }
+
+    &--close {
+      margin-top: 50px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 17px;
+
+      background-color: $color-hawkes-blue;
+      border-radius: 20px;
+
+      @include vp-767 {
+        margin-top: 52px;
+
+        width: 100%;
+        max-width: 100%;
+        height: 39px;
+        gap: 7px;
+
+        button {
+          display: flex;
+        }
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        order: -1;
+      }
+    }
+  }
+
+  &__toggle-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+
+    @include vp-1023 {
+      width: 33px;
+      height: 33px;
+    }
+
+    @include vp-767 {
+      margin-left: auto;
+      width: 18px;
+      height: 100%;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include vp-1023 {
+      width: 33px;
+
+      svg {
+        width: 33px;
+      }
+    }
+
+    @include vp-767 {
+      width: 15px;
+
+      svg {
+        width: 15px;
+      }
+    }
+  }
+
+}
