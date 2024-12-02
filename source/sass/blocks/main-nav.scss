@@ -109,5 +109,10 @@
 
     border: none;
     border-radius: 100%;
+
+    svg use {
+      width: 16px;
+      height: 14px;
+    }
   }
 }

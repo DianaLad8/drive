@@ -1,20 +1,23 @@
 import Swiper from 'swiper';
+import {Autoplay} from 'swiper/modules';
 
 const indexPage = document.querySelector('[data-index]');
 
 
 const swiperDirections = new Swiper('.directions__slider', {
+  modules: [Autoplay],
   width: 619,
   height: 140,
   initialSlide: 0,
   loop: true,
-  slidesPerView: 1,
+  slidesPerView: 'auto',
   slidesPerGroup: 1,
   spaceBetween: 10,
   direction: 'vertical',
   autoplay: {
     delay: 3000,
-    // disableOnInteraction: false
+    disableOnInteraction: true,
+    pauseOnMouseEnter: true,
   },
 });
 

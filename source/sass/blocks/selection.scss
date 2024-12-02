@@ -1,0 +1,141 @@
+.selection {
+  padding: 46px 48px;
+  width: 100%;
+  background-color: $color-pattens-blue;
+  border-radius: 20px;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 34px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+
+  &__subtitle {
+    margin-bottom: 23px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__direction {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+
+  &__button-toggle {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 1;
+  }
+
+  &__button-toggle.is-open {
+    transform: rotate(180deg);
+  }
+
+  &__icon-button {
+    width: 10px;
+    height: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 0;
+    transition: max-height $trans-default;
+    overflow: hidden;
+
+    &--transport {
+      flex-direction: row;
+    }
+  }
+
+  &__list.is-open {
+    max-height: 100%;
+  }
+
+  &__item {
+    width: 100%;
+
+    &--transport {
+      width: 25%;
+    }
+  }
+
+  &__checkbox-transport {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: $color-default-white;
+
+    label {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    input {
+      width: 0;
+    }
+
+    .selection__transport-icon {
+      opacity: 0.3;
+    }
+
+    input:checked + .selection__transport-icon {
+      opacity: 1;
+    }
+  }
+
+
+  &__item .custom-toggle.custom-toggle--checkbox {
+    padding: 0;
+  }
+
+  &__slider {
+    // height: 20px;
+  }
+
+  &__slider.slider-stiled {
+    height: 10px;
+  }
+
+  &__slider.slider-stiled#slider-round .noUi-connect {
+    background: #c0392b;
+  }
+
+  &__slider.slider-stiled#slider-round .noUi-handle {
+    height: 18px;
+    width: 18px;
+    top: -5px;
+    right: -9px; /* half the width */
+    border-radius: 9px;
+  }
+}

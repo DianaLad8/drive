@@ -228,6 +228,8 @@
 
     min-width: 298px;
 
+    transition: transform $trans-default;
+
     @include vp-1023 {
       margin-top: 88px;
       padding-right: 20px;
@@ -244,6 +246,14 @@
       height: 65px;
       font-size: 18px;
       border-radius: 10px;
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
+
+      svg {
+        transform: rotate(-90deg);
+      }
     }
   }
 }

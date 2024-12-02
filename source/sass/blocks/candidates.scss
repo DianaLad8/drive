@@ -1,0 +1,25 @@
+.candidates {
+  &__candidates {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__candidate {
+    max-width: 951px;
+    width: 100%;
+    min-height: 266px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: $color-default-white;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__photo {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    width: 100%;
+    border-radius: 20px 0 0 0;
+  }
+}

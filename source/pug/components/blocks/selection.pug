@@ -1,0 +1,158 @@
+mixin selection()
+  -
+    const hobbyList = [
+      {
+        name: "sport",
+        label: "Спортзал",
+        checked: true,
+      },
+      {
+        name: "hookah",
+        label: "Кальян",
+        checked: false,
+      },
+      {
+        name: "sofa",
+        label: "Диван",
+        checked: false,
+      },
+      ]
+  -
+    const musicList = [
+      {
+        name: "rock",
+        label: "Тяжелый рок",
+        checked: true,
+      },
+      {
+        name: "rap",
+        label: "Русский рэп",
+        checked: false,
+      },
+      {
+        name: "eurodance",
+        label: "Евроденс",
+        checked: false,
+      },
+      ]
+  -
+    const foodList = [
+      {
+        name: "meat eater",
+        label: "Мясоед",
+        checked: true,
+      },
+      {
+        name: "pp",
+        label: "Сидит на ПП",
+        checked: false,
+      },
+      {
+        name: "vegan",
+        label: "Веган-сыроед",
+        checked: false,
+      },
+      ]
+  -
+    const transportList = [
+      {
+        name: "airplane",
+        width: "19",
+        height: "21",
+        checked: true,
+      },
+      {
+        name: "bus",
+        width: "20",
+        height: "20",
+        checked: true,
+      },
+      {
+        name: "bike",
+        width: "25",
+        height: "25",
+        checked: false,
+      },
+      {
+        name: "men",
+        width: "23",
+        height: "22",
+        checked: true,
+      },
+      ]
+  .selection
+    h3.selection__title Подберите идеального попутчика
+    form
+      .selection__fieldset(data-fieldset)
+        .selection__subtitle
+          span.selection__direction хобби
+          button.btn.btn--letter.selection__button-toggle(type="button", data-fieldset-toggle)
+            .selection__icon-button
+              +icon("selection-toggle-list", 10, 5)
+        .selection__list(data-selection-list)
+            each item in hobbyList
+              .selection__item
+                +custom-toggle({
+                  inputLabel: item.label,
+                  inputName: item.name,
+                  inputValue: item.name,
+                  inputChecked: item.checked
+                }).custom-toggle--checkbox
+      .selection__fieldset(data-fieldset)
+        .selection__subtitle
+          span.selection__direction музыка
+          button.btn.btn--letter.selection__button-toggle.is-open(type="button", data-fieldset-toggle)
+            .selection__icon-button.is-open
+              +icon("selection-toggle-list", 10, 5)
+        .selection__list.is-open(data-selection-list)
+            each item in musicList
+              .selection__item
+                +custom-toggle({
+                  inputLabel: item.label,
+                  inputName: item.name,
+                  inputValue: item.name,
+                  inputChecked: item.checked
+                }).custom-toggle--checkbox
+      .selection__fieldset(data-fieldset)
+        .selection__subtitle
+          span.selection__direction еда
+          button.btn.btn--letter.selection__button-toggle(type="button", data-fieldset-toggle)
+            .selection__icon-button.is-open
+              +icon("selection-toggle-list", 10, 5)
+        .selection__list(data-selection-list)
+            each item in foodList
+              .selection__item
+                +custom-toggle({
+                  inputLabel: item.label,
+                  inputName: item.name,
+                  inputValue: item.name,
+                  inputChecked: item.checked
+                }).custom-toggle--checkbox
+      .selection__fieldset(data-fieldset)
+        .selection__subtitle
+          span.selection__direction транспорт
+          button.btn.btn--letter.selection__button-toggle(type="button", data-fieldset-toggle)
+            .selection__icon-button.is-open
+              +icon("selection-toggle-list", 10, 5)
+        .selection__list.selection__list--transport(data-selection-list)
+            each item in transportList
+              .selection__item.selection__item--transport
+                div.selection__checkbox-transport
+                  label
+                    input(type="checkbox", value=item.name, name=item.name, checked=item.checked)
+                    span.selection__transport-icon
+                      +icon(item.name, item.width, item.height)
+      .selection__fieldset(data-fieldset)
+        .selection__subtitle
+          span.selection__direction ЛЕВЕЛ
+          button.btn.btn--letter.selection__button-toggle.is-open(type="button", data-fieldset-toggle).is-open
+            .selection__icon-button.is-open
+              +icon("selection-toggle-list", 10, 5)
+        .selection__list.is-open(data-selection-list)
+          .selection__slider.slider-styled(id="slider-rounder")
+          p.selection__field
+            label.selection__label
+            input.selection__value(type="text")
+      +btn({text: "показать"}).selection__button
+
+

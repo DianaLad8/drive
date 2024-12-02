@@ -103,6 +103,8 @@
     padding: 29px 15px 27px 37px;
     gap: 16px;
 
+    transition: transform $trans-default;
+
     @include vp-1023 {
       grid-column: 1 / -1;
       min-width: 100%;
@@ -114,6 +116,14 @@
       gap: 44px;
       font-size: 18px;
       border-radius: 10px;
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
+
+      svg {
+        transform: rotate(-90deg);
+      }
     }
   }
 

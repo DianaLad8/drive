@@ -134,8 +134,18 @@
   }
 
   &__button {
+    transition: transform $trans-default;
+
     @include vp-1023 {
       margin-left: 6px;
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
+
+      svg {
+        transform: rotate(-90deg);
+      }
     }
   }
 
