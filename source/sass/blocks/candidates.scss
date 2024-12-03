@@ -1,25 +1,471 @@
 .candidates {
+  margin-bottom: 125px;
+
   &__candidates {
+    margin: 0;
+    margin-bottom: 66px;
+    padding: 0;
+    list-style-type: none;
+
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    @include vp-767 {
+      position: relative;
+    }
   }
 
   &__candidate {
     max-width: 951px;
     width: 100%;
-    min-height: 266px;
+    min-height: 286px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 30% minmax(226px, 30%) minmax(226px, 30%);
+    grid-template-rows: 94px 87px 104px;
+    column-gap: 3%;
+    row-gap: 0;
+    justify-content: space-between;
+    align-items: start;
     background-color: $color-default-white;
     border-radius: 20px;
     overflow: hidden;
+
+    @include vp-1023 {
+      padding: 35px 25px 25px 35px;
+      grid-template-columns: 190px 290px auto;
+      column-gap: 29px;
+    }
+
+    &--tanya {
+      .candidates__call {
+        display: none;
+      }
+
+      .candidates__transport-list li:not(:first-child) {
+        opacity: 0.3;
+      }
+    }
+
+    &--petya {
+      .candidates__countries-item:last-child {
+        display: none;
+      }
+
+      .candidates__transport-bike {
+        opacity: 0.3;
+      }
+    }
+
+    &--mark {
+      .candidates__level {
+        position: relative;
+      }
+
+      .candidates__level-icon {
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        top: 0;
+        right: 0;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &--larisa {
+      .candidates__countries-item:last-child {
+        display: none;
+      }
+
+      .candidates__level {
+        position: relative;
+      }
+
+      .candidates__level-icon {
+        position: absolute;
+        width: 34px;
+        height: 64px;
+        top: 0;
+        right: 0;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .candidates__transport-bike,
+      .candidates__transport-men {
+        opacity: 0.3;
+      }
+    }
+
+    @include hover-focus {
+      cursor: pointer;
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+    }
   }
 
   &__photo {
     grid-column: 1/2;
-    grid-row: 1/-1;
+    grid-row: 1/4;
+    justify-self: end;
+    width: 285px;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+
+    @include vp-1023 {
+      grid-column: 1/2;
+      grid-row: 1/4;
+      width: 190px;
+      height: 190px;
+      border-radius: 20px;
+    }
+  }
+
+  &__image {
+    width: 300px;
+    height: 100%;
+
+    @include vp-1023 {
+      width: 190px;
+      height: 190px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+    width: fit-content;
+    margin-top: 45px;
+    grid-column: 2/3;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    svg {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -24px;
+
+      @include vp-1023 {
+        left: auto;
+        right: -24px;
+      }
+    }
+
+    h3 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 100%;
+      text-align: center;
+      color: $color-catalina-blue;
+
+      @include vp-767 {
+        font-size: 21px;
+        line-height: 100%;
+      }
+    }
+
+    &__icons {
+      width: 130px;
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  &__hashtags {
+    width: 230px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    p {
+      margin: 0;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 115%;
+      color: $color-default-black;
+    }
+  }
+
+  &__call {
+    padding-top: 5px;
+    margin-left: -3px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__button {
+    padding: 17px;
+    width: 150px;
+    min-width: 150px;
+    height: 50px;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    border-radius: 25px;
+  }
+
+  &__likes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__likes-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $color-lavender;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__likes-number {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  &__countries {
+    grid-column: 3/4;
+    grid-row: 1/3;
+
+    @include vp-1023 {
+      grid-column: 1/4;
+      grid-row: 4/5;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    @include vp-1023 {
+      position: relative;
+      margin-left: 84px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 107%;
+
+      display: flex;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: calc(50% + 1px);
+        right: -25px;
+        width: 87%;
+        height: 1px;
+        background-color: $color-solitude;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(50% + 1px);
+        left: -125px;
+        width: 17%;
+        height: 1px;
+        background-color: $color-solitude;
+      }
+    }
+
+    &--mobile {
+      @include vp-1023 {
+        display: none;
+      }
+
+      @include vp-767 {
+        display: block;
+      }
+    }
+  }
+
+  &__countries-list {
+    margin-top: 53px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include vp-1023 {
+      margin-top: 18px;
+      flex-direction: row;
+    }
+  }
+
+  &__countries-item {
+    display: flex;
+    gap: 13px;
+  }
+
+  &__county {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  &__block {
+    grid-column: 3/4;
+    grid-row: 3/4;
+    display: flex;
+    align-items: center;
+    gap: 43px;
+
+    @include vp-1023 {
+      grid-column: 3/4;
+      grid-row: 1/4;
+      flex-direction: column;
+    }
+  }
+
+  &__level {
+    order: 1;
+    position: relative;
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include vp-1023 {
+      order: 0;
+    }
+
+
+    @include vp-767 {
+      top: 17px;
+      left: 17px;
+    }
+
+    svg {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      inset: 0;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "level";
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      text-decoration: overline;
+      z-index: 1;
+    }
+  }
+
+  &__transport-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    gap: 14px;
+
+    @include vp-1023 {
+      flex-direction: column;
+    }
+  }
+
+  &__pagination {
     width: 100%;
-    border-radius: 20px 0 0 0;
+    max-width: 949px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  &__pagination-plus {
+    padding-right: 20px;
+    position: relative;
+    justify-self: center;
+
+    gap: 24px;
+    margin-bottom: 72px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    &::before {
+      content: "+";
+      position: absolute;
+      left: -50px;
+      top: -2px;
+      font-weight: 300;
+      font-size: 48px;
+    }
+  }
+
+  &__buttons-page {
+    padding: 26px 29px 24px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-default-white;
+    border-radius: 20px;
+  }
+
+  &__pages,
+  &__arrows {
+    display: flex;
+  }
+
+  &__arrow {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 11px;
+      height: 18px;
+    }
+
+    &--prev {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
   }
 }

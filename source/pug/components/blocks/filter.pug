@@ -19,7 +19,7 @@ mixin filter()
       },
       ]
   .filter
-    +btn({text: "", type: "button"})(aria-label="показать все страны", data-countries-toggle).btn--line.filter__button-line
+    +btn({text: "", type: "button"}).btn--line.filter__button-line(aria-label="показать все страны", data-countries-toggle)
     .filter-buttons
       .filter-buttons__wrapper
         .filter-buttons__subtitle(data-countries-subtitle)
@@ -30,16 +30,16 @@ mixin filter()
           each button, index in filterButtons
             - const currentIndex = index === 0
             if (currentIndex)
-              +btn({text: button.filter, type: "button"})(data-filter=button.continent).btn--text.filter-buttons__filter.is-active
+              +btn({text: button.filter, type: "button"}).btn--text.filter-buttons__filter.is-active(data-filter=button.continent)
             else
-              +btn({text: button.filter, type: "button"})(data-filter=button.continent).btn--text.filter-buttons__filter
+              +btn({text: button.filter, type: "button"}).btn--text.filter-buttons__filter(data-filter=button.continent)
         .filter-buttons__toggle.filter-buttons__toggle--top(data-countries-toggle-main, data-countries-toggle)
-          +btn({text: "показать все", type: "button"})(data-countries-toggle-text).btn--text
+          +btn({text: "показать все", type: "button"}).btn--text(data-countries-toggle-text)
           .filter-buttons__toggle-icon
             +icon("points", 33, 33)
     .filter__list(data-countries-list)
       +alphabet()
-      .filter-buttons__toggle.filter-buttons__toggle--close(data-countries-toggle)
-        +btn({text: "свернуть", type: "button"}).btn--text.filter-buttons__toggle.is-active
+      .filter__toggle.filter__toggle--close(data-countries-toggle)
+        +btn({text: "свернуть", type: "button"}).btn--text.filter__toggle.is-active
         +icon("icon-close", 24, 24)
 

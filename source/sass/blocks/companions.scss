@@ -23,7 +23,7 @@
 
     @include vp-1023 {
       padding: 57px 40px 40px 40px;
-      grid-template-columns:  1fr;
+      grid-template-columns: 1fr;
       gap: 19px;
     }
 
@@ -50,7 +50,6 @@
       min-width: 100%;
       height: calc(100% + 88px);
       border-radius: 0 0 60px 60px;
-
     }
 
     @include vp-767 {
@@ -86,7 +85,6 @@
     margin-bottom: 40px;
     font-weight: 700;
     font-size: 95px;
-    line-height: 47%;
     line-height: 60%;
     font-variant: all-small-caps;
     word-break: break-all;
@@ -232,6 +230,5 @@
         transform: rotate(-90deg);
       }
     }
-
   }
 }

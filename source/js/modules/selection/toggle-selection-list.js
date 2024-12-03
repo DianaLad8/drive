@@ -14,9 +14,9 @@ const toggleSelectionList = () => {
 
         currentButton.classList.toggle('is-open');
         currentSelectionList.classList.toggle('is-open');
-      })
-    })
+      });
+    });
   }
-}
+};
 
 export {toggleSelectionList};

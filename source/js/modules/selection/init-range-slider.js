@@ -7,9 +7,6 @@ const initRangeSlider = () => {
   if (catalogPade) {
     const sliderElement = catalogPade.querySelector('.selection__slider');
 
-    console.log(sliderElement);
-
-
     noUiSlider.create(sliderElement, {
       range: {
         min: 0,
@@ -21,6 +18,6 @@ const initRangeSlider = () => {
     });
 
   }
-}
+};
 
 export {initRangeSlider};

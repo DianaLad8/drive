@@ -27,9 +27,9 @@ const toggleCountriesList = () => {
           iconUse.setAttribute('xlink:href', 'img/sprite.svg#points');
           countriesToggleMainText.textContent = 'показать все';
         }
-      })
-    })
+      });
+    });
   }
-}
+};
 
 export {toggleCountriesList};

@@ -87,7 +87,7 @@ mixin selection()
         .selection__subtitle
           span.selection__direction хобби
           button.btn.btn--letter.selection__button-toggle(type="button", data-fieldset-toggle)
-            .selection__icon-button
+            span.selection__icon-button
               +icon("selection-toggle-list", 10, 5)
         .selection__list(data-selection-list)
             each item in hobbyList
@@ -102,7 +102,7 @@ mixin selection()
         .selection__subtitle
           span.selection__direction музыка
           button.btn.btn--letter.selection__button-toggle.is-open(type="button", data-fieldset-toggle)
-            .selection__icon-button.is-open
+            span.selection__icon-button.is-open
               +icon("selection-toggle-list", 10, 5)
         .selection__list.is-open(data-selection-list)
             each item in musicList
@@ -117,7 +117,7 @@ mixin selection()
         .selection__subtitle
           span.selection__direction еда
           button.btn.btn--letter.selection__button-toggle(type="button", data-fieldset-toggle)
-            .selection__icon-button.is-open
+            span.selection__icon-button.is-open
               +icon("selection-toggle-list", 10, 5)
         .selection__list(data-selection-list)
             each item in foodList
@@ -128,31 +128,31 @@ mixin selection()
                   inputValue: item.name,
                   inputChecked: item.checked
                 }).custom-toggle--checkbox
-      .selection__fieldset(data-fieldset)
+      .selection__fieldset.selection__fieldset--transport(data-fieldset)
         .selection__subtitle
           span.selection__direction транспорт
-          button.btn.btn--letter.selection__button-toggle(type="button", data-fieldset-toggle)
-            .selection__icon-button.is-open
+          button.btn.btn--letter.selection__button-toggle.is-open(type="button", data-fieldset-toggle)
+            span.selection__icon-button.is-open
               +icon("selection-toggle-list", 10, 5)
-        .selection__list.selection__list--transport(data-selection-list)
+        .selection__list.selection__list--transport.is-open(data-selection-list)
             each item in transportList
               .selection__item.selection__item--transport
-                div.selection__checkbox-transport
+                .selection__checkbox-transport
                   label
                     input(type="checkbox", value=item.name, name=item.name, checked=item.checked)
                     span.selection__transport-icon
                       +icon(item.name, item.width, item.height)
-      .selection__fieldset(data-fieldset)
+      .selection__fieldset.selection__fieldset--level(data-fieldset)
         .selection__subtitle
           span.selection__direction ЛЕВЕЛ
-          button.btn.btn--letter.selection__button-toggle.is-open(type="button", data-fieldset-toggle).is-open
-            .selection__icon-button.is-open
+          button.btn.btn--letter.selection__button-toggle.is-open(type="button", data-fieldset-toggle)
+            span.selection__icon-button.is-open
               +icon("selection-toggle-list", 10, 5)
         .selection__list.is-open(data-selection-list)
-          .selection__slider.slider-styled(id="slider-rounder")
           p.selection__field
             label.selection__label
             input.selection__value(type="text")
-      +btn({text: "показать"}).selection__button
+          .selection__slider.slider-styled(id="slider-rounder")
+      +btn({text: "показать"}).selection__button.btn.btn--catalog
 
 

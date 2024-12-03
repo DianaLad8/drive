@@ -1,9 +1,6 @@
 .head-catalog {
   position: relative;
 
-  // .container {
-  // }
-
   &__wrapper {
     padding: 105px 56px 0;
     height: 194px;
@@ -16,7 +13,7 @@
     @include vp-767 {
       padding: 18px 0 0;
       height: 75px;
-   }
+    }
   }
 
   &__fond {

@@ -103,16 +103,15 @@
     @include vp-767 {
       padding-top: 25px;
       min-height: 158px;
-
     }
 
     p {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 115%;
-        text-align: center;
-        color: $color-charcoal;
-      }
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 115%;
+      text-align: center;
+      color: $color-charcoal;
+    }
   }
 
   &__flags {
@@ -153,7 +152,7 @@
 
       @include vp-767 {
         font-size: 21px;
-        line-height: 100%
+        line-height: 100%;
       }
     }
 

@@ -118,6 +118,42 @@
     }
   }
 
+  &--catalog {
+    padding: 17px;
+    width: 150px;
+    min-width: 150px;
+    height: 50px;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    border-radius: 25px;
+  }
+
+  &--number {
+    padding: 10px;
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    border-radius: 50%;
+
+    background-color: $color-transparent;
+  }
+
+  &--number.is-active {
+    background-color: $color-picton-blue;
+  }
+
   &:disabled {
     opacity: 0.5;
 

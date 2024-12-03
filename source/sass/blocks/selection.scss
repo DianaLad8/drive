@@ -1,8 +1,16 @@
 .selection {
-  padding: 46px 48px;
+  padding: 45px 14% 48px 17%;
   width: 100%;
+  max-width: 285px;
+  min-height: 300px;
   background-color: $color-pattens-blue;
   border-radius: 20px;
+
+  @include vp-1023 {
+    padding: 37px 35px 37px 34px;
+
+    max-width: 100%;
+  }
 
   &__title {
     margin: 0;
@@ -10,20 +18,57 @@
     font-weight: 700;
     font-size: 30px;
     line-height: 100%;
+
+    @include vp-1023 {
+      margin-bottom: 38px;
+      padding-bottom: 38px;
+      border-bottom: 1px solid $color-golden-dream;
+    }
   }
 
   form {
     display: flex;
     flex-direction: column;
-    gap: 19px;
+
+    @include vp-1023 {
+      gap: 5px;
+    }
+  }
+
+  &__fieldset {
+    @include vp-1023 {
+      display: flex;
+
+      &--transport {
+        margin-top: -2px;
+
+        .selection__subtitle {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &--level {
+      margin-top: 27px;
+
+      @include vp-1023 {
+        margin-top: -5px;
+        border-bottom: 1px solid $color-golden-dream;
+      }
+    }
   }
 
   &__subtitle {
-    margin-bottom: 23px;
+    margin-top: 0;
+    margin-bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include vp-1023 {
+      width: 124px;
+    }
   }
 
   &__direction {
@@ -31,6 +76,17 @@
     font-size: 20px;
     line-height: 110%;
     text-transform: uppercase;
+
+    @include vp-1023 {
+      width: 124px;
+      line-height: 100%;
+
+      &::after {
+        content: ":";
+        font-size: 20px;
+        line-height: 100%;
+      }
+    }
   }
 
   &__button-toggle {
@@ -42,6 +98,10 @@
     align-items: center;
 
     opacity: 1;
+
+    @include vp-1023 {
+      display: none;
+    }
   }
 
   &__button-toggle.is-open {
@@ -59,25 +119,77 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     max-height: 0;
     transition: max-height $trans-default;
     overflow: hidden;
 
+    @include vp-1023 {
+      width: 100%;
+      max-height: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     &--transport {
       flex-direction: row;
+      gap: 0;
+
+      @include vp-1023 {
+        padding-bottom: 0;
+        width: 177px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: visible;
+      }
     }
   }
 
   &__list.is-open {
+    padding-bottom: 28px;
+
     max-height: 100%;
+  }
+
+  &__list--transport.is-open {
+    @include vp-1023 {
+      padding-bottom: 0;
+      width: 177px;
+      height: 50px;
+      justify-content: flex-start;
+    }
   }
 
   &__item {
     width: 100%;
+    height: 23px;
+    word-break: break-all;
+
+    @include vp-1023 {
+      width: 150px;
+    }
+
+    label {
+      padding-left: 45px;
+      display: flex;
+      align-items: center;
+
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      color: $color-default-black;
+
+      // @include vp-1023 {
+      //   padding: 0 40px;
+      // }
+    }
 
     &--transport {
       width: 25%;
+
+      label {
+        padding-left: 0;
+      }
     }
   }
 
@@ -98,7 +210,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
     }
 
     input {
@@ -114,28 +225,36 @@
     }
   }
 
-
   &__item .custom-toggle.custom-toggle--checkbox {
     padding: 0;
   }
 
-  &__slider {
-    // height: 20px;
+  &__button {
+    width: 100%;
+    background-color: $color-default-white;
+
+    @include vp-1023 {
+      margin-top: 36px;
+    }
   }
 
-  &__slider.slider-stiled {
-    height: 10px;
-  }
+  // &__slider {
+  //   // height: 20px;
+  // }
 
-  &__slider.slider-stiled#slider-round .noUi-connect {
-    background: #c0392b;
-  }
+  // &__slider.slider-stiled {
+  //   height: 10px;
+  // }
 
-  &__slider.slider-stiled#slider-round .noUi-handle {
-    height: 18px;
-    width: 18px;
-    top: -5px;
-    right: -9px; /* half the width */
-    border-radius: 9px;
-  }
+  // &__slider.slider-stiled#slider-round .noUi-connect {
+  //   background: #c0392b;
+  // }
+
+  // &__slider.slider-stiled#slider-round .noUi-handle {
+  //   height: 18px;
+  //   width: 18px;
+  //   top: -5px;
+  //   right: -9px; /* half the width */
+  //   border-radius: 9px;
+  // }
 }

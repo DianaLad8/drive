@@ -3,6 +3,7 @@ mixin candidates()
     const candidates = [
       {
         name: "Таня Фирсова",
+        class: "candidates__candidate candidates__candidate--tanya",
         fond: "photo-tanya",
         level: 99,
         levelIcon: "circle99-catalog",
@@ -14,10 +15,12 @@ mixin candidates()
         country2: "Таиланд",
         flag3: "seychelles-flag",
         country3: "Сейшелы",
-        marker: "marker-red"
+        marker: "marker-red",
+        likes: 0,
       },
       {
         name: "Петя Демин",
+        class: "candidates__candidate candidates__candidate--petya",
         fond: "photo-petya",
         level: 80,
         levelIcon: "circle80-catalog",
@@ -29,34 +32,105 @@ mixin candidates()
         flag3: "seychelles-flag",
         country3: "Сейшелы",
         country2: "Чехия",
-        marker: "marker-green"
+        marker: "marker-red",
+        likes: 1500,
+      },
+      {
+        name: "Марк Смолов",
+        class: "candidates__candidate candidates__candidate--mark",
+        fond: "photo-mark",
+        level: 25,
+        levelIcon: "circle25-catalog",
+        fondMobile: "thailand-mobile",
+        text: "#рэп #тату #хайпбист #кроссовки #суприм",
+        flag1: "usa-flag",
+        country1: "сша",
+        flag2: "australia-flag",
+        country2: "австралия",
+        flag3: "dominica-flag",
+        country3: "доминика",
+        marker: "marker-red",
+        likes: 170,
+      },
+      {
+        name: "Лариса Роговая",
+        class: "candidates__candidate candidates__candidate--larisa",
+        fond: "photo-larisa",
+        level: 50,
+        levelIcon: "circle50-catalog",
+        fondMobile: "thailand-mobile",
+        text: "#образование #карьера #учеба #линкедин",
+        flag1: "britain-flag",
+        country1: "Великобритания",
+        flag2: "germany-flag",
+        country2: "Германия",
+        flag3: "seychelles-flag",
+        country3: "Сейшелы",
+        marker: "marker-green",
+        likes: 23,
       },
     ]
 
   .candidates
     ul.candidates__candidates
       each candidate in candidates
-        li.candidates__candidate
+        li(class= candidate.class)
           .candidates__photo
-            +img("content", candidate.fond, "png", 286, 286, candidate.name)
+            .candidates__image
+              +img("content", candidate.fond, "png", 286, 286, candidate.name)
           .candidates__name
               +icon(candidate.marker, 9, 8)
               h3= candidate.name
-    //-       .candidates__level
-    //-         +icon(candidate.levelIcon, 60, 60)
-    //-         span= candidate.level
-    //-         .candidates__flags
-    //-           span
-    //-             +img("content", candidates.flag1, "png", 35, 25, `флаг страны - ${candidates.country1}`)
-    //-           span
-    //-             +img("content", candidates.flag2, "png", 35, 25, `флаг страны - ${candidates.country2}`)
-    //-           span
-    //-             +img("content", candidates.flag3, "png", 35, 25, `флаг страны - ${candidates.country3}`)
-    //-         p= candidates.text
-    //-         .candidates__icons
-    //-           +icon("airplane", 21, 20)
-    //-           +icon("bus", 21, 20)
-    //-           +icon("bike", 21, 20)
-    //-           +icon("men", 21, 20)
-    //- a.candidates__button.btn(href="catalog.html", target="_blank", rel="nofollow noopener noreferrer",aria-label="Просто ссылка") Показать всех
-    //-   +icon("icon-about-button", 11, 14)
+          .candidates__hashtags
+            p= candidate.text
+          .candidates__call
+            +btn({text: "ПОзвать!"}).candidates__button
+            .candidates__likes
+              .candidates__likes-icon
+                +icon("likes", 60, 60)
+              span.candidates__likes-number= candidate.likes
+          .candidates__countries
+            .candidates__subtitle хочет посетить:
+            .candidates__countries-list
+              .candidates__countries-item
+                .candidates__flag
+                  +img("content", candidate.flag1, "png", 35, 25, `флаг страны - ${candidate.country1}`)
+                .candidates__county= candidate.country1
+              .candidates__countries-item
+                .candidates__flag
+                  +img("content", candidate.flag2, "png", 35, 25, `флаг страны - ${candidate.country2}`)
+                .candidates__county= candidate.country2
+              .candidates__countries-item
+                .candidates__flag
+                  +img("content", candidate.flag3, "png", 35, 25, `флаг страны - ${candidate.country3}`)
+                .candidates__county= candidate.country3
+          .candidates__block
+            .candidates__level
+              span.candidates__subtitle.candidates__subtitle--mobile level
+              span= candidate.level
+              .candidates__level-icon
+                +icon(candidate.levelIcon, 60, 60)
+            .candidates__transport
+              span.candidates__subtitle.candidates__subtitle--mobile level
+              ul.candidates__transport-list
+                li.candidates__transport-airplane
+                  +icon("airplane", 21, 20)
+                li.candidates__transport-bus
+                  +icon("bus", 21, 20)
+                li.candidates__transport-bike
+                  +icon("bike", 21, 20)
+                li.candidates__transport-men
+                  +icon("men", 21, 20)
+    .candidates__pagination
+      .candidates__pagination-plus показать еще
+      .candidates__buttons-page
+        .candidates__pages
+          +btn({text: "1", type: "button"}).btn--number.candidates__page.is-active(data-page)
+          +btn({text: "2", type: "button"}).btn--number.candidates__page(data-page)
+          +btn({text: "3", type: "button"}).btn--number.candidates__page(data-page)
+          +btn({text: "4", type: "button"}).btn--number.candidates__page(data-page)
+        .candidates__arrows
+          button.btn.btn--number.candidates__arrow.candidates__arrow--prev(type="button", data-page="prev")
+            +icon("icon-about-button", 11, 18)
+          button.btn.btn--number.candidates__arrow(type="button", data-page="next")
+            +icon("icon-about-button", 11, 18)

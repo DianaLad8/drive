@@ -22,6 +22,10 @@ mixin alphabet()
         continent: "africa",
       },
       {
+        country: "Ангола",
+        continent: "africa",
+      },
+      {
         country: "Андорра",
         continent: "europe",
       },
@@ -325,7 +329,11 @@ mixin alphabet()
         country: "Колумбия",
         continent: "america",
       },
-    ]
+      {
+        country: " ",
+        continent: "america",
+      },
+      ]
   -
     const letter10 = [
       {
@@ -442,6 +450,14 @@ mixin alphabet()
         country: "Норвегия",
         continent: "europe",
       },
+      {
+        country: " ",
+        continent: "europe",
+      },
+      {
+        country: " ",
+        continent: "europe",
+      },
     ]
   -
     const letter13 = [
@@ -552,6 +568,10 @@ mixin alphabet()
       },
       {
         country: "США",
+        continent: "america",
+      },
+      {
+        country: " ",
         continent: "america",
       },
     ]
@@ -725,127 +745,127 @@ mixin alphabet()
 
   .alphabet
     .alphabet__letter
-      +btn({text: "A", type: "button"})(data-letter, data-default-active).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter1
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "Б", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "Б", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter2
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "В", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "В", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter3
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "г", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "Г", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter4
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "д", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "Д", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter5
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "е", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "Е", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter6
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "з", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter7
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "и", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter8
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "к", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter9
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "л", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter10
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "м", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter11
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "н", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter12
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "о", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter13
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "п", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter14
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "р", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter15
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "с", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter16
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "т", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter17
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "у", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter18
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "ф", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter19
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "х", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter20
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "ч", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter21
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "ш", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter22
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "э", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter23
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "ю", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter24
           p.alphabet__item(data-continent=country.continent)= country.country
     .alphabet__letter
-      +btn({text: "я", type: "button"})(data-letter).btn--letter.alphabet__button.is-active
-      div.alphabet__list
+      +btn({text: "A", type: "button"}).btn--letter.alphabet__button.is-active(data-letter, data-default-active)
+      .alphabet__list
         each country in letter25
           p.alphabet__item(data-continent=country.continent)= country.country

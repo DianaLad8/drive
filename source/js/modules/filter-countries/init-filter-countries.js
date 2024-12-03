@@ -7,11 +7,11 @@ const initFilterCountries = () => {
 
     countries.forEach((country) => {
       country.style.display = 'none';
-    })
+    });
 
     filterButtons.forEach((filter) => {
 
-      function filterActiveCountries (button) {
+      function filterActiveCountries(button) {
         const buttonCurrentContinent = button.getAttribute('data-filter');
         const buttonActive = button.classList.contains('is-active');
 
@@ -27,7 +27,7 @@ const initFilterCountries = () => {
               country.style.display = 'none';
             }
           }
-        })
+        });
       }
 
       filterActiveCountries(filter);
@@ -45,20 +45,20 @@ const initFilterCountries = () => {
         const buttonActiveFilter = filterButtonsArray.filter((button) => {
           const buttonActive = button.classList.contains('is-active');
           return buttonActive;
-        })
+        });
         if (buttonActiveFilter.length <= 0) {
           countries.forEach((country) => {
             country.style.display = 'block';
-          })
+          });
         } else {
           // countries.forEach((country) => {
           //   country.style.display = 'none';
           // })
           // filterActiveCountries(filter);
         }
-      })
-    })
+      });
+    });
   }
-}
+};
 
 export {initFilterCountries};
