@@ -1,5 +1,6 @@
 .about {
   position: relative;
+  overflow: hidden;
 
   &__fond {
     position: absolute;
@@ -157,7 +158,7 @@
     height: 665px;
     z-index: -1;
 
-    transform: translateZ(-1);
+    transform: translateY(-757px);
 
     @include vp-1023 {
       right: -31px;

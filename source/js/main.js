@@ -4,6 +4,7 @@ import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initHeroTasks} from './modules/gsap/init-hero-tasks';
+import {initParallax} from './modules/gsap/init-parallax';
 import {initDirectionsSlider} from './modules/swiper/init-directions-slider';
 import {toggleCountriesList} from './modules/filter-countries/toggle-countries-list';
 import {toggleLetterAlphabet} from './modules/filter-countries/toggle-letter-alphabet';
@@ -37,6 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.form = form;
     form.init();
     initHeroTasks();
+    initParallax();
     initDirectionsSlider();
     toggleCountriesList();
     toggleLetterAlphabet();

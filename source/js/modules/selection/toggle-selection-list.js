@@ -11,7 +11,6 @@ const toggleSelectionList = () => {
         const currentSelectionList = currentFieldset.querySelector('[data-selection-list]');
         const currentButton = currentFieldset.querySelector('[data-fieldset-toggle]');
 
-
         currentButton.classList.toggle('is-open');
         currentSelectionList.classList.toggle('is-open');
       });

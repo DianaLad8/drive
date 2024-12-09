@@ -6,18 +6,24 @@ const indexPage = document.querySelector('[data-index]');
 
 const swiperDirections = new Swiper('.directions__slider', {
   modules: [Autoplay],
-  width: 619,
-  height: 140,
-  initialSlide: 0,
+  initialSlide: 2,
   loop: true,
   slidesPerView: 'auto',
+  centeredSlides: true,
   slidesPerGroup: 1,
   spaceBetween: 10,
   direction: 'vertical',
   autoplay: {
     delay: 3000,
-    disableOnInteraction: true,
+    disableOnInteraction: false,
     pauseOnMouseEnter: true,
+  },
+  on: {
+    init() {
+      setTimeout(() => {
+        this.update();
+      }, 100);
+    },
   },
 });
 

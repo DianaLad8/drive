@@ -17,10 +17,10 @@ const initRangeSlider = () => {
       step: 1,
       connect: 'upper',
       format: {
-        to: function (value) {
+        to(value) {
           return value;
         },
-        from: function (value) {
+        from(value) {
           return parseFloat(value);
         },
       },
@@ -29,6 +29,13 @@ const initRangeSlider = () => {
 
     sliderElement.noUiSlider.on('update', (...rest) => {
       rangeValue.value = sliderElement.noUiSlider.get();
+    });
+
+    rangeValue.addEventListener('click', () => {
+      rangeValue.value = '';
+      rangeValue.addEventListener('input', () => {
+        sliderElement.noUiSlider.set(rangeValue.value);
+      });
     });
   }
 };

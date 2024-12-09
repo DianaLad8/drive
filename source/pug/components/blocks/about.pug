@@ -1,5 +1,5 @@
 mixin about()
-  section.about
+  section.about(data-parallax-parent)
     .container
       .about__fond
       .about__wrapper
@@ -9,7 +9,7 @@ mixin about()
             p.about__subtext А&nbsp;если найдете кого-то близкого по&nbsp;духу&nbsp;&mdash; скорее зовите в&nbsp;совместный трип!
             a.about__button.btn(href="#", target="_blank", rel="nofollow noopener noreferrer", aria-label="Просто ссылка") Подробнее
               +icon("icon-about-button", 11, 14)
-          .about__image
+          .about__image(data-parallax-image)
             picture
               source(type="image/webp", media="(min-width: 1023px)", srcset="./img/content/about-image-desktop.webp 1x, ./img/content/about-image-desktop@2x.webp 2x", width="654", height="665")
               source(type="image/webp", media="(min-width: 768px)", srcset="./img/content/about-image-tablet.webp 1x, ./img/content/about-image-tablet@2x.webp 2x", width="368", height="546")
