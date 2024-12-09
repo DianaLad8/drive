@@ -143,16 +143,15 @@ mixin selection()
                     span.selection__transport-icon
                       +icon(item.name, item.width, item.height)
       .selection__fieldset.selection__fieldset--level(data-fieldset)
-        .selection__subtitle
+        .selection__subtitle.selection__subtitle--level
           span.selection__direction ЛЕВЕЛ
           button.btn.btn--letter.selection__button-toggle.is-open(type="button", data-fieldset-toggle)
             span.selection__icon-button.is-open
               +icon("selection-toggle-list", 10, 5)
-        .selection__list.is-open(data-selection-list)
-          p.selection__field
+        .selection__list.selection__list--level.is-open(data-selection-list)
+          .selection__field
             label.selection__label
-            input.selection__value(type="text", data-range-value)
+              input.selection__value(type="text", data-range-value)
+            span 100
           .selection__slider.slider-styled(id="slider-rounder")
       +btn({text: "показать"}).selection__button.btn.btn--catalog
-
-
