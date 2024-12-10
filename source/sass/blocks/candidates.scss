@@ -1,6 +1,10 @@
 .candidates {
   margin-bottom: 125px;
 
+  @include vp-1023 {
+    margin-bottom: 112px;
+  }
+
   &__candidates {
     margin: 0;
     margin-bottom: 66px;
@@ -10,6 +14,11 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    @include vp-1023 {
+      margin-bottom: 50px;
+      gap: 39px;
+    }
 
     @include vp-767 {
       position: relative;
@@ -33,7 +42,8 @@
 
     @include vp-1023 {
       padding: 35px 25px 25px 35px;
-      grid-template-columns: 190px 290px auto;
+      grid-template-columns: 190px 314px auto;
+      grid-template-rows: 46px 62px 104px;
       column-gap: 29px;
     }
 
@@ -153,6 +163,10 @@
     justify-content: flex-start;
     align-items: center;
 
+    @include vp-1023 {
+      margin-top: 0;
+    }
+
     svg {
       position: absolute;
       width: 8px;
@@ -163,7 +177,7 @@
 
       @include vp-1023 {
         left: auto;
-        right: -24px;
+        right: -31px;
       }
     }
 
@@ -211,6 +225,11 @@
     display: flex;
     align-items: center;
     gap: 5px;
+
+    @include vp-1023 {
+      padding-top: 32px;
+      gap: 8px;
+    }
   }
 
   &__button {
@@ -225,12 +244,21 @@
     text-transform: uppercase;
 
     border-radius: 25px;
+
+    @include vp-1023 {
+      width: 170px;
+      min-width: 170px;
+    }
   }
 
   &__likes {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include vp-1023 {
+      gap: 7px;
+    }
   }
 
   &__likes-icon {
@@ -270,7 +298,7 @@
 
     @include vp-1023 {
       position: relative;
-      margin-left: 84px;
+      margin-left: 50px;
       font-weight: 400;
       font-size: 15px;
       line-height: 107%;
@@ -316,14 +344,33 @@
     gap: 15px;
 
     @include vp-1023 {
-      margin-top: 18px;
+      margin-top: 21px;
       flex-direction: row;
+      gap: 20px;
     }
   }
 
   &__countries-item {
     display: flex;
     gap: 13px;
+
+    @include vp-1023 {
+      align-items: flex-end;
+      gap: 14px;
+    }
+  }
+
+  &__flag {
+    @include vp-1023 {
+      width: 40px;
+      height: 24px;
+
+      svg {
+        width: 40px;
+        height: 24px;
+        object-fit: cover;
+      }
+    }
   }
 
   &__county {
@@ -344,6 +391,7 @@
       grid-column: 3/4;
       grid-row: 1/4;
       flex-direction: column;
+      gap: 6px;
     }
   }
 
@@ -359,7 +407,7 @@
     flex-direction: column;
 
     @include vp-1023 {
-      order: 0;
+      // order: 0;
     }
 
 
@@ -401,7 +449,9 @@
     gap: 14px;
 
     @include vp-1023 {
+      margin-top: 5px;
       flex-direction: column;
+      gap: 5px;
     }
   }
 
@@ -416,7 +466,7 @@
 
 
   &__pagination-plus {
-    padding-right: 20px;
+    margin-right: 20px;
     position: relative;
     justify-self: center;
 
@@ -426,6 +476,12 @@
     font-size: 20px;
     line-height: 100%;
     text-transform: uppercase;
+
+    @include vp-1023 {
+      margin-left: 56px;
+      margin-right: 0;
+      margin-bottom: 48px;
+    }
 
     &::before {
       content: "+";
@@ -444,6 +500,10 @@
     justify-content: space-between;
     background-color: $color-default-white;
     border-radius: 20px;
+
+    @include vp-1023 {
+      padding-right: 15px;
+    }
   }
 
   &__pages,

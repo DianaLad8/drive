@@ -94,15 +94,15 @@ mixin candidates()
             .candidates__countries-list
               .candidates__countries-item
                 .candidates__flag
-                  +img("content", candidate.flag1, "png", 35, 25, `флаг страны - ${candidate.country1}`)
+                  +img("content", candidate.flag1, "png", 40, 24, `флаг страны - ${candidate.country1}`)
                 .candidates__county= candidate.country1
               .candidates__countries-item
                 .candidates__flag
-                  +img("content", candidate.flag2, "png", 35, 25, `флаг страны - ${candidate.country2}`)
+                  +img("content", candidate.flag2, "png", 40, 24, `флаг страны - ${candidate.country2}`)
                 .candidates__county= candidate.country2
               .candidates__countries-item
                 .candidates__flag
-                  +img("content", candidate.flag3, "png", 35, 25, `флаг страны - ${candidate.country3}`)
+                  +img("content", candidate.flag3, "png", 40, 24, `флаг страны - ${candidate.country3}`)
                 .candidates__county= candidate.country3
           .candidates__block
             .candidates__level
@@ -131,6 +131,6 @@ mixin candidates()
           +btn({text: "4", type: "button"}).btn--number.candidates__page(data-page)
         .candidates__arrows
           button.btn.btn--number.candidates__arrow.candidates__arrow--prev(type="button", data-page="prev")
-            +icon("icon-about-button", 11, 18)
+            +icon("icon-arrow", 10, 18)
           button.btn.btn--number.candidates__arrow(type="button", data-page="next")
-            +icon("icon-about-button", 11, 18)
+            +icon("icon-arrow", 10, 18)

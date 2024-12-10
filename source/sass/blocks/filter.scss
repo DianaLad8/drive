@@ -1,6 +1,10 @@
 .filter {
   position: relative;
 
+  @include vp-1023 {
+    padding: 0 40px;
+  }
+
   @include vp-767 {
     padding-bottom: 28px;
   }
@@ -22,9 +26,7 @@
     }
   }
 
-
   &__list {
-    padding: 0 24px;
     max-height: 0;
     transition: max-height $trans-default;
     overflow: hidden;
@@ -39,7 +41,22 @@
   }
 
   &__list.is-open {
+    padding-bottom: 130px;
     max-height: 100%;
+
+    @include vp-1023 {
+      padding-top: 50px;
+      position: absolute;
+      top: 144px;
+      left: 0;
+      width: 100%;
+      height: 696px;
+      max-height: 901px;
+      padding-bottom: 85px;
+      z-index: 2;
+      background-color: $color-lavender;
+      border-radius: 0 0 60px 60px;
+    }
   }
 
   &__toggle {
@@ -53,6 +70,11 @@
 
       background-color: $color-hawkes-blue;
       border-radius: 20px;
+
+      @include vp-1023 {
+        margin: 0 39px;
+        margin-top: 54px;
+      }
 
       @include vp-767 {
         margin-top: 52px;
