@@ -26,7 +26,7 @@ mixin filter()
           .filter-buttons__icon
             +icon("filter", 23, 15)
           span.filter-buttons__text Фильтрация по странам:
-        .filter-buttons__buttons
+        .filter-buttons__buttons(data-countries-list-mobile)
           each button, index in filterButtons
             - const currentIndex = index === 0
             if (currentIndex)

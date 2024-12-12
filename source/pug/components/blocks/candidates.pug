@@ -95,23 +95,23 @@ mixin candidates()
               .candidates__countries-item
                 .candidates__flag
                   +img("content", candidate.flag1, "png", 40, 24, `флаг страны - ${candidate.country1}`)
-                .candidates__county= candidate.country1
+                .candidates__country= candidate.country1
               .candidates__countries-item
                 .candidates__flag
                   +img("content", candidate.flag2, "png", 40, 24, `флаг страны - ${candidate.country2}`)
-                .candidates__county= candidate.country2
+                .candidates__country= candidate.country2
               .candidates__countries-item
                 .candidates__flag
                   +img("content", candidate.flag3, "png", 40, 24, `флаг страны - ${candidate.country3}`)
-                .candidates__county= candidate.country3
+                .candidates__country= candidate.country3
           .candidates__block
             .candidates__level
-              span.candidates__subtitle.candidates__subtitle--mobile level
-              span= candidate.level
+              span.candidates__subtitle.candidates__subtitle--mobile.candidates__subtitle--mobile-level левел:
+              span.candidates__level-text= candidate.level
               .candidates__level-icon
                 +icon(candidate.levelIcon, 60, 60)
             .candidates__transport
-              span.candidates__subtitle.candidates__subtitle--mobile level
+              span.candidates__subtitle.candidates__subtitle--mobile транспорт:
               ul.candidates__transport-list
                 li.candidates__transport-airplane
                   +icon("airplane", 21, 20)

@@ -21,7 +21,8 @@
     }
 
     @include vp-767 {
-      position: relative;
+      align-items: center;
+      gap: 10px;
     }
   }
 
@@ -47,12 +48,26 @@
       column-gap: 29px;
     }
 
+    @include vp-767 {
+      position: relative;
+      padding: 14px 20px 23px 18px;
+      max-width: 270px;
+      min-height: 393px;
+      grid-template-columns: 70px 1fr;
+      grid-template-rows: 70px 36px min-content auto;
+      column-gap: 16px;
+      row-gap: 14px;
+    }
+
     &--tanya {
+      @include vp-767 {
+        min-height: 416px;
+      }
       .candidates__call {
         display: none;
       }
 
-      .candidates__transport-list li:not(:first-child) {
+      .candidates__transport-list li:not(:first-child) svg {
         opacity: 0.3;
       }
     }
@@ -62,7 +77,7 @@
         display: none;
       }
 
-      .candidates__transport-bike {
+      .candidates__transport-bike svg {
         opacity: 0.3;
       }
     }
@@ -78,6 +93,11 @@
         height: 34px;
         top: 0;
         right: 0;
+
+        @include vp-767 {
+          width: 25px;
+          height: 24px;
+        }
 
         svg {
           width: 100%;
@@ -102,14 +122,19 @@
         top: 0;
         right: 0;
 
+        @include vp-767 {
+          width: 25px;
+          height: 47px;
+        }
+
         svg {
           width: 100%;
           height: 100%;
         }
       }
 
-      .candidates__transport-bike,
-      .candidates__transport-men {
+      .candidates__transport-bike svg,
+      .candidates__transport-men svg {
         opacity: 0.3;
       }
     }
@@ -136,6 +161,13 @@
       height: 190px;
       border-radius: 20px;
     }
+
+    @include vp-767 {
+      grid-row: 1/2;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
   }
 
   &__image {
@@ -145,6 +177,11 @@
     @include vp-1023 {
       width: 190px;
       height: 190px;
+    }
+
+    @include vp-767 {
+      width: 70px;
+      height: 70px;
     }
 
     img {
@@ -167,6 +204,12 @@
       margin-top: 0;
     }
 
+    @include vp-767 {
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
     svg {
       position: absolute;
       width: 8px;
@@ -178,6 +221,16 @@
       @include vp-1023 {
         left: auto;
         right: -31px;
+      }
+
+      @include vp-767 {
+        margin-top: 10px;
+        margin-right: 3px;
+        position: relative;
+        width: 6px;
+        height: 6px;
+        order: 1;
+        right: 0;
       }
     }
 
@@ -192,6 +245,11 @@
       @include vp-767 {
         font-size: 21px;
         line-height: 100%;
+        text-align: left;
+      }
+
+      @include vp-767 {
+        width: 77px;
       }
     }
 
@@ -213,6 +271,17 @@
       font-size: 20px;
       line-height: 115%;
       color: $color-default-black;
+
+      @include vp-767 {
+        width: 200px;
+        font-size: 15px;
+        line-height: 120%;
+      }
+    }
+
+    @include vp-767 {
+      padding-left: 6px;
+      grid-column: 1/-1;
     }
   }
 
@@ -229,6 +298,13 @@
     @include vp-1023 {
       padding-top: 32px;
       gap: 8px;
+    }
+
+    @include vp-767 {
+      padding-top: 0;
+      min-height: 40px;
+      grid-column: 1/-1;
+      grid-row: 5/6;
     }
   }
 
@@ -249,6 +325,12 @@
       width: 170px;
       min-width: 170px;
     }
+
+    @include vp-767 {
+      width: 100%;
+      height: 40px;
+      font-size: 17px;
+    }
   }
 
   &__likes {
@@ -258,6 +340,14 @@
 
     @include vp-1023 {
       gap: 7px;
+    }
+
+    @include vp-767 {
+      position: absolute;
+      width: 71px;
+      height: 30px;
+      top: 53px;
+      left: 70px;
     }
   }
 
@@ -274,6 +364,16 @@
       width: 20px;
       height: 20px;
     }
+
+    @include vp-767 {
+      width: 30px;
+      height: 30px;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
   }
 
   &__likes-number {
@@ -281,6 +381,11 @@
     font-size: 20px;
     line-height: 100%;
     text-transform: uppercase;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 114%;
+    }
   }
 
   &__countries {
@@ -290,6 +395,12 @@
     @include vp-1023 {
       grid-column: 1/4;
       grid-row: 4/5;
+    }
+
+    @include vp-767 {
+      padding-left: 7px;
+      grid-column: 1/-1;
+      grid-row: 3/4;
     }
   }
 
@@ -304,6 +415,11 @@
       line-height: 107%;
 
       display: flex;
+
+      @include vp-767 {
+        font-size: 14px;
+        line-height: 114%;
+      }
 
       &::before {
         content: "";
@@ -324,6 +440,19 @@
         height: 1px;
         background-color: $color-solitude;
       }
+
+      @include vp-767 {
+        margin-left: 0;
+
+        &::before {
+          width: 138px;
+        }
+
+        &::after {
+          left: -18px;
+          width: 15px;
+        }
+      }
     }
 
     &--mobile {
@@ -333,6 +462,32 @@
 
       @include vp-767 {
         display: block;
+
+        &::before {
+          width: 91px;
+          right: -48px;
+        }
+      }
+    }
+
+    &--mobile-level.candidates__subtitle--mobile {
+      position: absolute;
+      width: 43px;
+      height: 16px;
+      top: -25px;
+      right: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 114%;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        right: -18px;
+        left: auto;
+        width: 15px;
       }
     }
   }
@@ -347,6 +502,12 @@
       margin-top: 21px;
       flex-direction: row;
       gap: 20px;
+    }
+
+    @include vp-767 {
+      margin-top: 18px;
+      flex-direction: column;
+      gap: 10px;
     }
   }
 
@@ -371,13 +532,28 @@
         object-fit: cover;
       }
     }
+
+    @include vp-767 {
+      width: 26px;
+      height: 18px;
+
+      svg {
+        width: 26px;
+        height: 18px;
+      }
+    }
   }
 
-  &__county {
+  &__country {
     font-weight: 500;
     font-size: 20px;
     line-height: 100%;
     text-transform: uppercase;
+
+    @include vp-767 {
+      font-size: 15px;
+      line-height: 107%;
+    }
   }
 
   &__block {
@@ -393,6 +569,15 @@
       flex-direction: column;
       gap: 6px;
     }
+
+    @include vp-767 {
+      position: relative;
+      grid-column: 1/-1;
+      grid-row: 4/5;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
   }
 
   &__level {
@@ -406,37 +591,59 @@
     align-items: center;
     flex-direction: column;
 
-    @include vp-1023 {
-      // order: 0;
+    @include vp-767 {
+      position: relative;
+      width: 45px;
+      height: 45px;
     }
+  }
 
+  &__level-text {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    z-index: 1;
+
+      &::after {
+        content: "level";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        text-decoration: overline;
+        z-index: 1;
+      }
 
     @include vp-767 {
-      top: 17px;
-      left: 17px;
-    }
+      order: 1;
 
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__level-icon {
     svg {
       position: absolute;
       width: 60px;
       height: 60px;
       inset: 0;
-    }
 
-    span {
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 100%;
-      z-index: 1;
+      @include vp-767 {
+        width: 45px;
+        height: 45px;
+      }
     }
+  }
 
-    &::after {
-      content: "level";
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 100%;
-      text-decoration: overline;
-      z-index: 1;
+  &__transport {
+    @include vp-767 {
+      margin-bottom: 7px;
+    }
+     span {
+      @include vp-767 {
+        padding-left: 7px;
+      }
     }
   }
 
@@ -452,6 +659,22 @@
       margin-top: 5px;
       flex-direction: column;
       gap: 5px;
+    }
+
+    @include vp-767 {
+      margin-top: 14px;
+      flex-direction: row;
+      gap: 1px;
+
+      li {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $color-solitude;
+      }
     }
   }
 
@@ -490,6 +713,11 @@
       top: -2px;
       font-weight: 300;
       font-size: 48px;
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
+      cursor: pointer;
     }
   }
 

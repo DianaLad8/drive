@@ -2,14 +2,22 @@
   padding: 45px 14% 48px 17%;
   width: 100%;
   max-width: 285px;
-  min-height: 300px;
+  height: fit-content;
   background-color: $color-pattens-blue;
   border-radius: 20px;
+  order: 1;
 
   @include vp-1023 {
+    order: 0;
     padding: 37px 35px 37px 34px;
 
     max-width: 100%;
+  }
+
+  @include vp-767 {
+    margin-top: 21px;
+    padding: 25px;
+    padding-bottom: 22px;
   }
 
   &__title {
@@ -24,6 +32,13 @@
       padding-bottom: 38px;
       border-bottom: 1px solid $color-golden-dream;
     }
+
+    @include vp-767 {
+      margin-bottom: 0;
+      padding-bottom: 21px;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
   }
 
   form {
@@ -32,6 +47,11 @@
 
     @include vp-1023 {
       gap: 5px;
+    }
+
+    @include vp-767 {
+      margin-top: 2px;
+      gap: 1px;
     }
   }
 
@@ -57,6 +77,19 @@
         border-bottom: 1px solid $color-golden-dream;
       }
     }
+
+    @include vp-767 {
+      flex-direction: column;
+      border-bottom: 1px solid $color-golden-dream;
+
+      &--transport {
+        margin-top: 1px;
+      }
+
+      &--level {
+        border-bottom: none;
+      }
+    }
   }
 
   &__subtitle {
@@ -71,8 +104,19 @@
       width: 124px;
     }
 
+    @include vp-767 {
+      margin-bottom: 0;
+      padding: 9px 0;
+      width: 100%;
+    }
+
     &--level {
       margin-bottom: 15px;
+
+      @include vp-767 {
+        padding-top: 16px;
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -92,6 +136,15 @@
         line-height: 100%;
       }
     }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 112%;
+
+      &::after {
+        display: none;
+      }
+    }
   }
 
   &__button-toggle {
@@ -101,16 +154,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: $color-transparent;
     opacity: 1;
 
     @include vp-1023 {
       display: none;
     }
+
+    @include vp-767 {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   &__button-toggle.is-open {
     transform: rotate(180deg);
+
+    @include vp-767 {
+      justify-content: flex-start;
+    }
   }
 
   &__icon-button {
@@ -136,6 +198,12 @@
       justify-content: space-between;
     }
 
+    @include vp-767 {
+      flex-direction: column;
+      max-height: 0;
+      gap: 7px;
+    }
+
     &--transport {
       flex-direction: row;
       gap: 0;
@@ -154,6 +222,11 @@
     padding-bottom: 28px;
 
     max-height: 100%;
+
+    @include vp-767 {
+      margin-top: 5px;
+      padding-bottom: 14px;
+    }
   }
 
   &__list--transport.is-open {
@@ -181,6 +254,10 @@
       width: 150px;
     }
 
+    @include vp-767 {
+      width: 180px;
+    }
+
     label {
       padding-left: 45px;
       display: flex;
@@ -191,9 +268,16 @@
       line-height: 100%;
       color: $color-default-black;
 
-      // @include vp-1023 {
-      //   padding: 0 40px;
-      // }
+      @include vp-767 {
+        font-size: 15px;
+        line-height: 133%;
+        align-items: center;
+
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+      }
     }
 
     &--transport {
@@ -201,6 +285,10 @@
 
       label {
         padding-left: 0;
+      }
+
+      @include vp-767 {
+        width: 19%;
       }
     }
   }
@@ -216,12 +304,23 @@
     border-radius: 50%;
     background-color: $color-default-white;
 
+    @include vp-767 {
+      width: 32px;
+      height: 32px;
+    }
+
     label {
       width: 100%;
 
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @include vp-767 {
+        span {
+          height: 15px;
+        }
+      }
     }
 
     input {
@@ -258,12 +357,23 @@
       width: 148px;
     }
 
+    @include vp-767 {
+      width: 100%;
+      height: 34px;
+    }
+
     span {
       text-align: center;
       font-weight: 500;
       font-size: 20px;
       line-height: 100%;
       letter-spacing: 0.04em;
+
+      @include vp-767 {
+        font-size: 14px;
+        line-height: 93%;
+        letter-spacing: 0.07em;
+      }
     }
   }
 
@@ -271,6 +381,10 @@
     position: relative;
     padding: 10px 0;
     border-right: 1px solid #cbced9;
+
+    @include vp-767 {
+      padding: 4px 0;
+    }
 
     &::before {
       content: "";
@@ -302,15 +416,16 @@
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0.04em;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 93%;
+      letter-spacing: 0.06em;
+    }
   }
 
   &__slider {
     position: relative;
-
-    @include vp-1023 {
-      width: 275px;
-      order: -1;
-    }
 
     &::before {
       content: "";
@@ -323,6 +438,22 @@
       background-color: $color-catalina-blue;
       transform: translateY(-50%);
     }
+
+    @include vp-1023 {
+      width: 275px;
+      order: -1;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      order: 0;
+
+      &::before {
+        width: 10px;
+        height: 10px;
+        // right: 27px;
+      }
+    }
   }
 
   &__button {
@@ -331,6 +462,17 @@
 
     @include vp-1023 {
       margin-top: 15px;
+    }
+
+    @include vp-767 {
+      margin-top: -7px;
+      margin-left: -5px;
+      width: 100%;
+      min-width: 230px;
+      max-width: 100%;
+      height: 41px;
+      font-size: 17px;
+      line-height: 100%;
     }
   }
 }

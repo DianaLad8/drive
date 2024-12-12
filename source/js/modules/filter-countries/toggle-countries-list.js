@@ -5,6 +5,8 @@ const toggleCountriesList = () => {
     const buttonsToggleCountriesList = catalogPade.querySelectorAll('[data-countries-toggle]');
     const countriesToggleMain = catalogPade.querySelector('[data-countries-toggle-main]');
     const countriesList = catalogPade.querySelector('[data-countries-list]');
+    const countriesListMobile = catalogPade.querySelector('[data-countries-list-mobile]');
+
     const countriesSubtitle = catalogPade.querySelector('[data-countries-subtitle]');
 
 
@@ -14,7 +16,7 @@ const toggleCountriesList = () => {
         countriesList.classList.toggle('is-open');
         countriesToggleMain.classList.toggle('is-open');
         countriesSubtitle.classList.toggle('is-open');
-
+        countriesListMobile.classList.toggle('is-open');
 
         const buttonToggletMainOpen = countriesToggleMain.classList.contains('is-open');
         const countriesToggleMainText = countriesToggleMain.querySelector('[data-countries-toggle-text]');
