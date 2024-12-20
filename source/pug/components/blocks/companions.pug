@@ -38,24 +38,24 @@ mixin companions()
       .companions__fond
       .companions__block
         h2.companions__title Попутчики
-        p.companions__text Все мы&nbsp;индивидуальны и&nbsp;у&nbsp;каждого свой взгляд на&nbsp;идеальный отдых. Одному нужен пляж и&nbsp;коктейль, а&nbsp;другому маршрут для хайкинга.
+        p.companions__text Все мы&nbsp;индивидуальны и&nbsp;у&nbsp;каждого свой взгляд&nbsp;на идеальный отдых. Одному нужен пляж и&nbsp;коктейль, а&nbsp;другому маршрут для хайкинга.
         p.companions__subtext Теперь можно легко найти единомышленников!
       ul.companions__cards
         each card in companionCards
           li.companions__card.card
             .card__fond
-              +img("content", card.fond, "png", 286, 286, card.name)
+              +picture("content", card.fond, "png", 286, 286, card.name)
             .card__level
               +icon(card.levelIcon, 60, 60)
               span= card.level
             .card__content
               .card__flags
                 span
-                  +img("content", card.flag1, "png", 35, 25, `флаг страны - ${card.country1}`)
+                  +picture("content", card.flag1, "png", 35, 25, `флаг страны - ${card.country1}`)
                 span
-                  +img("content", card.flag2, "png", 35, 25, `флаг страны - ${card.country2}`)
+                  +picture("content", card.flag2, "png", 35, 25, `флаг страны - ${card.country2}`)
                 span
-                  +img("content", card.flag3, "png", 35, 25, `флаг страны - ${card.country3}`)
+                  +picture("content", card.flag3, "png", 35, 25, `флаг страны - ${card.country3}`)
               .card__name
                 +icon(card.marker, 9, 8)
                 span= card.name

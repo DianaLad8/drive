@@ -9,7 +9,7 @@ mixin form()
         height: 34,
       },
       {
-        href: "#",
+        href: "mailto:mail@htmlacademy.ru",
         text: "mail@htmlacademy.ru",
         icon: "mail-form",
         width: 37,
@@ -37,7 +37,7 @@ mixin form()
       ul.form__contacts
         each contact in formContacts
           li.form__contact
-            a.form__button-contact
+            a.form__button-contact(href=contact.href)
               .form__contact-icon
                 +icon(contact.icon, contact.width, contact.height)
               span.form__contact-text= contact.text

@@ -26,7 +26,7 @@ block main
   main
     .sitemap
       .container
-        img(src="./img/content/logo.webp 1x, ./img/content/logo@2x.webp 2x", width="200", height="50", alt="Логотип проекта")
+        +picture("content", "logo", "png", 200, 50, "Логотип сайта.")
         h1 Список страниц
         ol
           each page in pages

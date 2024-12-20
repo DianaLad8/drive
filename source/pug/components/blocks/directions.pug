@@ -25,6 +25,30 @@ mixin directions()
         people: 5326,
         flag: "czech-flag",
       },
+      {
+        country: "Таиланд",
+        fond: "thailand-desktop",
+        fondMobile: "thailand-mobile",
+        text: "Джунгли зовут!",
+        people: 18321,
+        flag: "thailand-flag",
+      },
+      {
+        country: "Франция",
+        fond: "france-desktop",
+        fondMobile: "france-mobile",
+        text: "Трэ бьен, манифик!",
+        people: 12518,
+        flag: "france-flag",
+      },
+      {
+        country: "Чехия",
+        fond: "czech-desktop",
+        fondMobile: "czech-mobile",
+        text: "Закоулки старой Европы",
+        people: 5326,
+        flag: "czech-flag",
+      },
     ]
 
   section.directions
@@ -32,19 +56,19 @@ mixin directions()
       .directions__fond
       .directions__block
         h2.directions__title Направления
-        p.directions__text Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&nbsp;рекламируем. Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.
+        p.directions__text Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&nbsp;рекламируем. Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.
       .directions__slider.swiper
         .directions__grad-top
-          +img("content", "directions-grad-top", "png", 619, 81, "")
+          +picture("content", "directions-grad-top", "png", 619, 81, "")
         .directions__grad-bottom
-          +img("content", "directions-grad-bottom", "png", 619, 81, "")
+          +picture("content", "directions-grad-bottom", "png", 619, 81, "")
         ul.directions__slides.swiper-wrapper
           each slide in directionsSlides
             li.directions__slide.swiper-slide.slide
               .slide__fond
-                +img("content", slide.fond, "png", 619, 140, slide.country)
+                +picture("content", slide.fond, "png", 619, 140, slide.country)
               .slide__fond-mobile
-                +img("content", slide.fondMobile, "png", 292, 353, slide.country)
+                +picture("content", slide.fondMobile, "png", 292, 353, slide.country)
               .slide__content
                 h3= slide.country
                 p= slide.text
@@ -52,6 +76,6 @@ mixin directions()
                   +icon("people", 21, 20)
                   span= slide.people
                 .slide__flag
-                  +img("content", slide.flag, "png", 70, 47, `флаг страны - ${slide.country}`)
+                  +picture("content", slide.flag, "png", 70, 47, `флаг страны - ${slide.country}`)
       a.directions__button.btn(href="catalog.html", target="_blank", rel="nofollow noopener noreferrer", aria-label="Просто ссылка") Показать все
         +icon("icon-about-button", 11, 14)

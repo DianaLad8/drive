@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   min-height: 654px;
+  height: 100%;
 
   &::before {
     content: "";
@@ -23,6 +24,7 @@
 
   .container {
     padding: 0 60px;
+    padding-bottom: 60px;
 
     @include vp-1023 {
       padding: 0 40px;
@@ -35,10 +37,11 @@
 
   &__fond {
     position: absolute;
-    top: -98px;
+    top: -107px;
     left: 0;
     width: 100%;
-    height: 744px;
+    min-height: 744px;
+    height: calc(100% + 98px);
 
     display: flex;
     justify-content: center;
@@ -313,6 +316,7 @@
       }
 
       @include vp-767 {
+        max-width: 199px;
         font-size: 18px;
       }
     }

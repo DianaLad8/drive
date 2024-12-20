@@ -12,7 +12,7 @@
 
     @include vp-767 {
       padding-top: 18px;
-      padding-bottom: 24px;
+      padding-bottom: 26px;
     }
   }
 
@@ -74,28 +74,29 @@
       padding-top: 32px;
       grid-template-columns: 1fr;
       justify-content: center;
-      gap: 37px;
+      gap: 35px;
     }
   }
 
   &__tarifs {
     margin: 0;
-    padding-top: 17px;
-    padding-left: 98px;
+    margin-top: 5px;
+    padding: 35px 0 25px 98px;
     list-style-type: none;
 
     display: grid;
-    gap: 15px;
+    gap: 11px;
 
     @include vp-1023 {
-      padding-top: 34px;
+      padding-top: 28px;
       padding-left: 94px;
       gap: 13px;
     }
 
     @include vp-767 {
       padding: 0;
-      gap: 5px;
+      margin: 0;
+      gap: 6px;
     }
   }
 
@@ -111,7 +112,7 @@
     font-size: 28px;
     line-height: 100%;
 
-    border-bottom: 1px solid $color-solitude-second;
+    border-top: 1px solid $color-solitude-second;
     counter-increment: tarif 1;
 
     @include vp-767 {
@@ -123,7 +124,7 @@
       content: counter(tarif) "";
       position: absolute;
       left: -95px;
-      top: 0;
+      bottom: -7px;
       width: 72px;
       height: 70px;
       padding-top: 20px;
@@ -138,7 +139,8 @@
 
       @include vp-767 {
         padding-top: 9px;
-        right: -60px;
+        top: 3px;
+        right: -56px;
         left: auto;
         width: 37px;
         height: 35px;
@@ -162,14 +164,35 @@
     padding-top: 18px;
     border-top: 1px solid $color-solitude-second;
 
+    &::before {
+      bottom: 0;
+    }
+
     @include vp-767 {
       padding-top: 0;
+    }
+  }
+
+  &__tarif:last-child {
+    padding-bottom: 18px;
+    border-bottom: 1px solid $color-solitude-second;
+
+    &::before {
+      bottom: 0;
+    }
+
+    @include vp-767 {
+      padding-bottom: 0;
     }
   }
 
   &__tarif:nth-child(3n + 2) {
     &::before {
       background-color: $color-jordy-blue;
+
+      @include vp-767 {
+        top: 3px;
+      }
     }
   }
 
@@ -182,7 +205,7 @@
   &__sign {
     padding: 62px 47px 69px 81px;
     width: 585px;
-    height: 333px;
+    min-height: 333px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -200,15 +223,16 @@
       padding: 23px 27px;
       padding-bottom: 18px;
       width: 198px;
-      height: 285px;
+      min-height: 285px;
       flex-direction: column;
     }
 
     @include vp-767 {
       justify-self: center;
-      padding: 16px 15px;
+      align-items: flex-start;
+      padding: 16px 18px 16px 15px;
       width: 263px;
-      height: 113px;
+      min-height: 113px;
       flex-direction: row;
     }
   }
@@ -237,11 +261,18 @@
       line-height: 100%;
     }
 
+    @include vp-767 {
+      min-height: 50px;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
     b {
       margin-bottom: 15px;
       font-weight: 700;
 
       @include vp-767 {
+        margin-bottom: 21px;
         font-size: 20px;
         line-height: 80%;
       }

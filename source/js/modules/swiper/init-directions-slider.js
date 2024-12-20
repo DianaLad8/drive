@@ -11,6 +11,7 @@ const swiperDirections = new Swiper('.directions__slider', {
   slidesPerView: 'auto',
   centeredSlides: true,
   slidesPerGroup: 1,
+  grabCursor: true,
   spaceBetween: 10,
   direction: 'vertical',
   autoplay: {

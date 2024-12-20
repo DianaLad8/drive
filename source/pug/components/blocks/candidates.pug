@@ -77,7 +77,7 @@ mixin candidates()
         li(class= candidate.class)
           .candidates__photo
             .candidates__image
-              +img("content", candidate.fond, "png", 286, 286, candidate.name)
+              +picture("content", candidate.fond, "png", 286, 286, candidate.name)
           .candidates__name
               +icon(candidate.marker, 9, 8)
               h3= candidate.name
@@ -94,15 +94,15 @@ mixin candidates()
             .candidates__countries-list
               .candidates__countries-item
                 .candidates__flag
-                  +img("content", candidate.flag1, "png", 40, 24, `флаг страны - ${candidate.country1}`)
+                  +picture("content", candidate.flag1, "png", 40, 24, `флаг страны - ${candidate.country1}`)
                 .candidates__country= candidate.country1
               .candidates__countries-item
                 .candidates__flag
-                  +img("content", candidate.flag2, "png", 40, 24, `флаг страны - ${candidate.country2}`)
+                  +picture("content", candidate.flag2, "png", 40, 24, `флаг страны - ${candidate.country2}`)
                 .candidates__country= candidate.country2
               .candidates__countries-item
                 .candidates__flag
-                  +img("content", candidate.flag3, "png", 40, 24, `флаг страны - ${candidate.country3}`)
+                  +picture("content", candidate.flag3, "png", 40, 24, `флаг страны - ${candidate.country3}`)
                 .candidates__country= candidate.country3
           .candidates__block
             .candidates__level

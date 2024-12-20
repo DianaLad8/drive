@@ -11,7 +11,7 @@
     height: 100%;
     top: 0;
     bottom: 0;
-    background-color: $color-catalina-blue;
+    background-color: $color-zodiac-blue;
     z-index: -21;
 
     border-radius: 0 0 60px 60px;
@@ -19,12 +19,16 @@
     @include vp-1023 {
       height: calc(100% + 60px);
       top: -60px;
+
+      background-color: $color-midnight-express-third;
     }
 
     @include vp-767 {
       top: -30px;
       height: calc(100% + 52px);
       border-radius: 0 0 30px 30px;
+
+      background-color: $color-midnight-express;
     }
   }
 
@@ -118,6 +122,15 @@
     @include vp-767 {
       font-size: 13px;
       line-height: 169%;
+    }
+
+    @include hover-focus {
+      color: $color-picton-blue;
+    }
+
+    &:hover:active {
+      color: #b8cde0;
+      opacity: 0.3;
     }
   }
 
@@ -240,6 +253,7 @@
     width: 100%;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 105px;
 
@@ -271,6 +285,26 @@
       padding: 0;
       gap: 10px;
     }
+
+    @include hover-focus {
+      .form__contact-text {
+        color: $color-picton-blue;
+      }
+
+      svg {
+        --color: #4d99d6;
+      }
+    }
+
+    &:hover:active {
+      .form__contact-text {
+        color: #244066;
+      }
+
+      svg {
+        --color: #244066;
+      }
+    }
   }
 
   &__contact-icon {
@@ -283,6 +317,10 @@
 
     border-radius: 50%;
     background-color: $color-midnight-express-second;
+
+    svg {
+      --color: #cce5fa;
+    }
 
     @include vp-1023 {
       padding: 10px;
