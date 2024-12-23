@@ -60,24 +60,28 @@ mixin selection()
         width: "19",
         height: "21",
         checked: true,
+        tooltip: "Авиаперелет",
       },
       {
         name: "bus",
         width: "20",
         height: "20",
         checked: true,
+        tooltip: "Автотранспорт",
       },
       {
         name: "bike",
         width: "25",
         height: "25",
         checked: false,
+        tooltip: "Велосипед",
       },
       {
         name: "men",
         width: "23",
         height: "22",
         checked: true,
+        tooltip: "Пешком",
       },
       ]
   .selection
@@ -142,6 +146,9 @@ mixin selection()
                     input(type="checkbox", value=item.name, name=item.name, checked=item.checked)
                     span.selection__transport-icon
                       +icon(item.name, item.width, item.height)
+                  .selection__tooltip
+                    +icon("tooltip", 14, 8)
+                    .selection__tooltip-text= item.tooltip
       .selection__fieldset.selection__fieldset--level(data-fieldset)
         .selection__subtitle.selection__subtitle--level.is-open(data-fieldset-toggle)
           span.selection__direction ЛЕВЕЛ

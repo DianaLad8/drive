@@ -940,4 +940,8 @@
       }
     }
   }
+
+  &__arrow.is-active {
+    background-color: $color-transparent;
+  }
 }

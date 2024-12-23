@@ -45,6 +45,15 @@
     span {
       margin-bottom: 0;
       margin-left: 0;
+
+      @include hover-focus {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+
+      &:hover:active {
+        opacity: 0.3;
+      }
     }
   }
 
