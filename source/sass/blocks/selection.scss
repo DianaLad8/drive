@@ -1,17 +1,22 @@
 .selection {
-  padding: 45px 14% 48px 17%;
-  width: 100%;
-  max-width: 285px;
+  padding: 46px 42px 48px 47px;
+  width: 285px;
   height: fit-content;
   background-color: $color-pattens-blue;
   border-radius: 20px;
   order: 1;
 
+  @include vp-1279 {
+    width: 230px;
+
+    padding: 46px 20px 48px;
+  }
+
   @include vp-1023 {
     order: 0;
-    padding: 37px 35px 37px 34px;
+    padding: 37px 19px 37px 34px;
 
-    max-width: 100%;
+    width: 100%;
   }
 
   @include vp-767 {
@@ -22,19 +27,20 @@
 
   &__title {
     margin: 0;
-    margin-bottom: 34px;
+    margin-bottom: 36px;
     font-weight: 700;
     font-size: 30px;
     line-height: 100%;
 
     @include vp-1023 {
-      margin-bottom: 38px;
+      margin-right: 14px;
+      margin-bottom: 34px;
       padding-bottom: 38px;
       border-bottom: 1px solid $color-golden-dream;
     }
 
     @include vp-767 {
-      margin-bottom: 0;
+      margin: 0;
       padding-bottom: 21px;
       font-size: 22px;
       letter-spacing: 0.02em;
@@ -46,7 +52,7 @@
     flex-direction: column;
 
     @include vp-1023 {
-      gap: 5px;
+      gap: 22px;
     }
 
     @include vp-767 {
@@ -56,11 +62,19 @@
   }
 
   &__fieldset {
+
+    &--transport {
+      .selection__subtitle {
+        margin-bottom: 16px;
+      }
+    }
+
     @include vp-1023 {
       display: flex;
+      align-items: center;
 
       &--transport {
-        margin-top: -2px;
+        margin-top: -4px;
 
         .selection__subtitle {
           margin-bottom: 0;
@@ -69,12 +83,20 @@
     }
 
     &--level {
-      margin-top: 27px;
+      margin-top: 9px;
       margin-bottom: 17px;
 
       @include vp-1023 {
-        margin-top: -5px;
+        margin: 0;
+        margin-right: 16px;
+        padding-bottom: 38px;
+        align-items: flex-start;
+        justify-content: space-between;
         border-bottom: 1px solid $color-golden-dream;
+      }
+
+      @include vp-767 {
+        margin: 0;
       }
     }
 
@@ -84,9 +106,12 @@
 
       &--transport {
         margin-top: 1px;
+        align-items: flex-start;
       }
 
       &--level {
+        padding-top: 12px;
+        padding-bottom: 20px;
         border-bottom: none;
       }
     }
@@ -101,6 +126,7 @@
     align-items: center;
 
     @include vp-1023 {
+      margin-bottom: 0;
       width: 124px;
     }
 
@@ -111,12 +137,31 @@
     }
 
     &--level {
-      margin-bottom: 15px;
+      margin-bottom: 17px;
 
-      @include vp-767 {
-        padding-top: 16px;
+      @include vp-1023 {
         margin-bottom: 0;
       }
+
+      @include vp-767 {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    @include hover-focus {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+
+    &:hover:active {
+      opacity: 0.3;
+    }
+  }
+
+  &__subtitle.is-open .selection__button-toggle {
+    span svg {
+      transform: rotate(180deg);
     }
   }
 
@@ -167,41 +212,67 @@
     }
   }
 
-  &__button-toggle.is-open {
-    transform: rotate(180deg);
-
-    @include vp-767 {
-      justify-content: flex-start;
-    }
-  }
-
   &__icon-button {
+    padding-bottom: 5px;
     width: 10px;
     height: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include vp-767 {
+      padding: 0;
+    }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 17px;
     max-height: 0;
     transition: max-height $trans-default;
     overflow: hidden;
 
     @include vp-1023 {
+      padding-bottom: 3px;
       width: 100%;
       max-height: 100%;
       flex-direction: row;
       justify-content: space-between;
+      flex-wrap: wrap;
+      overflow: visible;
+
+      &:not(.selection__list--food) {
+        padding-top: 3px;
+        padding-right: 19px;
+
+        @include vp-767 {
+          padding: 0;
+        }
+      }
     }
 
     @include vp-767 {
+      padding: 0;
       flex-direction: column;
       max-height: 0;
       gap: 7px;
+      overflow: hidden;
+    }
+
+
+    &--food {
+      @include vp-1023 {
+        padding-top: 5px;
+
+        .selection__item:last-child {
+          width: 168px;
+        }
+      }
+
+      @include vp-767 {
+        padding: 0;
+      }
     }
 
     &--transport {
@@ -215,13 +286,21 @@
         align-items: flex-start;
         overflow: visible;
       }
+
+      @include vp-767 {
+        width: 125px;
+      }
     }
   }
 
   &__list.is-open {
-    padding-bottom: 28px;
+    padding-bottom: 34px;
 
     max-height: 100%;
+
+    @include vp-1023 {
+      padding-bottom: 0;
+    }
 
     @include vp-767 {
       margin-top: 5px;
@@ -230,18 +309,33 @@
   }
 
   &__list--transport.is-open {
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+
     @include vp-1023 {
-      padding-bottom: 0;
-      width: 177px;
+      padding: 0;
+      min-width: 180px;
       height: 50px;
-      justify-content: flex-start;
+      justify-content: space-between;
+    }
+
+    @include vp-767 {
+      min-width: 125px;
     }
   }
 
   &__list--level.is-open {
+    padding-bottom: 25px;
+
     @include vp-1023 {
+      padding: 0;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+    }
+
+    @include vp-767 {
+      margin: 0;
+      padding: 10px 0;
     }
   }
 
@@ -259,6 +353,7 @@
     }
 
     label {
+      padding-top: 5px;
       padding-left: 45px;
       display: flex;
       align-items: center;
@@ -267,6 +362,10 @@
       font-size: 20px;
       line-height: 100%;
       color: $color-default-black;
+
+      @include vp-1023 {
+        padding-top: 0;
+      }
 
       @include vp-767 {
         font-size: 15px;
@@ -281,7 +380,8 @@
     }
 
     &--transport {
-      width: 25%;
+      width: 23%;
+      height: 50px;
 
       label {
         padding-left: 0;
@@ -290,6 +390,14 @@
       @include vp-767 {
         width: 19%;
       }
+    }
+
+    @include hover-focus {
+      opacity: 0.6;
+    }
+
+    &:hover:active {
+      opacity: 0.3;
     }
   }
 
@@ -341,8 +449,9 @@
   }
 
   &__field {
-    margin-bottom: 15px;
+    margin-bottom: 19px;
     width: 100%;
+    max-width: 192px;
     height: 46px;
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -354,11 +463,17 @@
     border-radius: 4px;
 
     @include vp-1023 {
-      width: 148px;
+      margin: 0;
+      margin-top: -15px;
+      width: 150px;
+      max-width: 150px;
     }
 
     @include vp-767 {
+      margin: 0;
+      margin-bottom: 13px;
       width: 100%;
+      max-width: 100%;
       height: 34px;
     }
 
@@ -379,7 +494,6 @@
 
   &__label {
     position: relative;
-    padding: 10px 0;
     border-right: 1px solid #cbced9;
 
     @include vp-767 {
@@ -409,6 +523,8 @@
   }
 
   &__value {
+    padding: 9.5px;
+    padding-bottom: 9px;
     width: 100%;
     border: none;
     text-align: center;
@@ -416,11 +532,23 @@
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0.04em;
+    border: 1px solid $color-transparent;
+    border-radius: 4px 0 0 4px;
+    outline: none;
 
     @include vp-767 {
       font-size: 14px;
       line-height: 93%;
       letter-spacing: 0.06em;
+    }
+
+    @include hover {
+      cursor: pointer;
+      border: 1px solid rgba($color-catalina-blue, 0.3);
+    }
+
+    &:focus {
+      border: 1px solid $color-catalina-blue;
     }
   }
 
@@ -440,7 +568,8 @@
     }
 
     @include vp-1023 {
-      width: 275px;
+      margin-top: 5px;
+      width: 284px;
       order: -1;
     }
 
@@ -457,11 +586,16 @@
   }
 
   &__button {
+    padding: 15px;
+    padding-top: 20px;
     width: 100%;
+    max-width: 194px;
     background-color: $color-default-white;
 
     @include vp-1023 {
       margin-top: 15px;
+      margin-right: auto;
+      max-width: 97%;
     }
 
     @include vp-767 {
@@ -473,6 +607,15 @@
       height: 41px;
       font-size: 17px;
       line-height: 100%;
+    }
+
+    @include hover-focus {
+      opacity: 1;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.14);
+    }
+
+    &:hover:active {
+      background-color: $color-picton-blue;
     }
   }
 }

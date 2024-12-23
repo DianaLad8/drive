@@ -86,7 +86,7 @@ mixin candidates()
           .candidates__call
             +btn({text: "ПОзвать!"}).candidates__button
             .candidates__likes
-              .candidates__likes-icon
+              button.candidates__likes-icon(type="button")
                 +icon("likes", 60, 60)
               span.candidates__likes-number= candidate.likes
           .candidates__countries
@@ -113,14 +113,26 @@ mixin candidates()
             .candidates__transport
               span.candidates__subtitle.candidates__subtitle--mobile транспорт:
               ul.candidates__transport-list
-                li.candidates__transport-airplane
+                li.candidates__transport-item.candidates__transport-airplane
+                  .candidates__tooltip
+                    +icon("tooltip", 14, 8)
+                    .candidates__tooltip-text Авиаперелет
                   +icon("airplane", 21, 20)
-                li.candidates__transport-bus
+                li.candidates__transport-item.candidates__transport-bus
+                  .candidates__tooltip
+                    +icon("tooltip", 14, 8)
+                    .candidates__tooltip-text Автотранспорт
                   +icon("bus", 21, 20)
-                li.candidates__transport-bike
+                li.candidates__transport-item.candidates__transport-bike
+                  .candidates__tooltip
+                    +icon("tooltip", 14, 8)
+                    .candidates__tooltip-text Велосипед
                   +icon("bike", 21, 20)
-                li.candidates__transport-men
-                  +icon("men", 21, 20)
+                li.candidates__transport-item.candidates__transport-men
+                  .candidates__tooltip
+                    +icon("tooltip", 14, 8)
+                    .candidates__tooltip-text Пешком
+                  +icon("men", 24, 26)
     .candidates__pagination
       .candidates__pagination-plus показать еще
       .candidates__buttons-page
@@ -130,7 +142,7 @@ mixin candidates()
           +btn({text: "3", type: "button"}).btn--number.candidates__page(data-page)
           +btn({text: "4", type: "button"}).btn--number.candidates__page(data-page)
         .candidates__arrows
-          button.btn.btn--number.candidates__arrow.candidates__arrow--prev(type="button", data-page="prev")
+          button.btn.btn--number.candidates__arrow.candidates__arrow--prev.is-active(type="button", data-page="prev")
             +icon("icon-arrow", 10, 18)
           button.btn.btn--number.candidates__arrow(type="button", data-page="next")
             +icon("icon-arrow", 10, 18)

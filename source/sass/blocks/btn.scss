@@ -152,6 +152,16 @@
 
   &--number.is-active {
     background-color: $color-picton-blue;
+
+    @include hover-focus {
+      opacity: 1;
+      cursor: auto;
+    }
+
+    &:hover:active {
+      opacity: 1;
+    }
+
   }
 
   &:disabled {

@@ -11,7 +11,7 @@
 
   &__candidates {
     margin: 0;
-    margin-bottom: 66px;
+    margin-bottom: 68px;
     padding: 0;
     list-style-type: none;
 
@@ -25,7 +25,7 @@
     }
 
     @include vp-767 {
-      margin-bottom: 20px;
+      margin-bottom: 17px;
       align-items: center;
       gap: 10px;
     }
@@ -36,15 +36,18 @@
     width: 100%;
     min-height: 286px;
     display: grid;
-    grid-template-columns: 30% minmax(226px, 30%) minmax(226px, 30%);
+    grid-template-columns: minmax(285px, 27%) minmax(275px, 27%) minmax(275px, 28%);
     grid-template-rows: 94px 87px 104px;
-    column-gap: 3%;
-    row-gap: 0;
     justify-content: space-between;
     align-items: start;
     background-color: $color-default-white;
     border-radius: 20px;
-    overflow: hidden;
+
+    @include vp-1279 {
+      padding-right: 20px;
+      grid-template-columns: minmax(30%, 285px) minmax(256px, 30%) minmax(185px, 30%);
+      column-gap: 20px;
+    }
 
     @include vp-1023 {
       padding: 35px 25px 25px 35px;
@@ -60,8 +63,8 @@
       min-height: 393px;
       grid-template-columns: 70px 1fr;
       grid-template-rows: 70px 36px min-content auto;
-      column-gap: 16px;
-      row-gap: 14px;
+      column-gap: 12px;
+      row-gap: 15px;
     }
 
     &--tanya {
@@ -151,11 +154,17 @@
     }
   }
 
+  &__candidate:hover .candidates__image {
+    width: 322px;
+  }
+
   &__photo {
+    position: relative;
     grid-column: 1/2;
     grid-row: 1/4;
     justify-self: end;
-    width: 285px;
+    max-width: 285px;
+    width: 100%;
     height: 100%;
     border-radius: 20px 0 0 20px;
     overflow: hidden;
@@ -177,7 +186,11 @@
   }
 
   &__image {
-    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 320px;
     height: 100%;
 
     @include vp-1023 {
@@ -199,7 +212,8 @@
 
   &__name {
     width: fit-content;
-    margin-top: 45px;
+    margin-top: 47px;
+    padding-left: 3px;
     grid-column: 2/3;
     position: relative;
     display: flex;
@@ -207,13 +221,22 @@
     align-items: center;
 
     @include vp-1023 {
-      margin-top: 0;
+      margin-top: -2px;
     }
 
     @include vp-767 {
+      margin-top: 0;
       width: 100%;
       justify-content: space-between;
       align-items: flex-start;
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
+    }
+
+    &:hover:active {
+      opacity: 0.5;
     }
 
     svg {
@@ -223,6 +246,10 @@
       top: 50%;
       transform: translateY(-50%);
       left: -24px;
+
+      @include vp-1279 {
+        left: -14px;
+      }
 
       @include vp-1023 {
         left: auto;
@@ -267,6 +294,8 @@
   }
 
   &__hashtags {
+    margin-top: 4px;
+    margin-left: 4px;
     width: 230px;
     grid-column: 2/3;
     grid-row: 2/3;
@@ -285,21 +314,25 @@
       }
     }
 
+    @include vp-1023 {
+      margin-top: 0;
+      margin-left: 6px;
+    }
+
     @include vp-767 {
-      padding-left: 6px;
       grid-column: 1/-1;
     }
   }
 
   &__call {
-    padding-top: 5px;
+    padding-top: 7px;
     margin-left: -3px;
     grid-column: 2/3;
     grid-row: 3/4;
 
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
 
     @include vp-1023 {
       padding-top: 32px;
@@ -307,6 +340,7 @@
     }
 
     @include vp-767 {
+      margin-top: -5px;
       padding-top: 0;
       min-height: 40px;
       grid-column: 1/-1;
@@ -315,7 +349,8 @@
   }
 
   &__button {
-    padding: 17px;
+    padding: 15px;
+    padding-bottom: 13px;
     width: 150px;
     min-width: 150px;
     height: 50px;
@@ -333,9 +368,20 @@
     }
 
     @include vp-767 {
-      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      width: 230px;
       height: 40px;
       font-size: 17px;
+    }
+
+    @include hover-focus {
+      background-color: $color-picton-blue;
+      opacity: 1;
+    }
+
+    &:hover:active {
+      color: rgba(29, 46, 91, 0.3);
     }
   }
 
@@ -343,6 +389,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2px;
 
     @include vp-1023 {
       gap: 7px;
@@ -352,8 +399,8 @@
       position: absolute;
       width: 71px;
       height: 30px;
-      top: 53px;
-      left: 70px;
+      top: 54px;
+      left: 67px;
     }
   }
 
@@ -365,6 +412,7 @@
     align-items: center;
     border-radius: 50%;
     background-color: $color-lavender;
+    border: none;
 
     svg {
       width: 20px;
@@ -380,9 +428,21 @@
         height: 12px;
       }
     }
+
+    @include hover-focus {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    &:hover:active {
+      svg {
+        opacity: 0.5;
+      }
+    }
   }
 
   &__likes-number {
+    padding-top: 5px;
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
@@ -477,41 +537,46 @@
     }
 
     &--mobile-level.candidates__subtitle--mobile {
-      position: absolute;
-      width: 43px;
-      height: 16px;
-      top: -25px;
-      right: 0;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 114%;
+      display: none;
 
-      &::before {
-        display: none;
-      }
+      @include vp-767 {
+        display: flex;
+        position: absolute;
+        width: 43px;
+        height: 16px;
+        top: -27px;
+        right: 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
 
-      &::after {
-        right: -18px;
-        left: auto;
-        width: 15px;
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          right: -18px;
+          left: auto;
+          width: 15px;
+        }
       }
     }
   }
 
   &__countries-list {
-    margin-top: 53px;
+    margin-top: 55px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 13px;
 
     @include vp-1023 {
       margin-top: 21px;
       flex-direction: row;
-      gap: 20px;
+      gap: 12px;
     }
 
     @include vp-767 {
-      margin-top: 18px;
+      margin-top: 17px;
       flex-direction: column;
       gap: 10px;
     }
@@ -519,7 +584,7 @@
 
   &__countries-item {
     display: flex;
-    gap: 13px;
+    gap: 16px;
 
     @include vp-1023 {
       align-items: flex-end;
@@ -528,25 +593,18 @@
   }
 
   &__flag {
+    width: 35px;
+    height: 24px;
+    display: flex;
+
     @include vp-1023 {
       width: 40px;
       height: 24px;
-
-      svg {
-        width: 40px;
-        height: 24px;
-        object-fit: cover;
-      }
     }
 
     @include vp-767 {
       width: 26px;
       height: 18px;
-
-      svg {
-        width: 26px;
-        height: 18px;
-      }
     }
   }
 
@@ -565,15 +623,21 @@
   &__block {
     grid-column: 3/4;
     grid-row: 3/4;
+    max-width: 233px;
     display: flex;
     align-items: center;
-    gap: 43px;
+    justify-content: space-between;
+
+    @include vp-1279 {
+      gap: 10px;
+    }
 
     @include vp-1023 {
+      margin-left: 2px;
       grid-column: 3/4;
       grid-row: 1/4;
       flex-direction: column;
-      gap: 6px;
+      gap: 2px;
     }
 
     @include vp-767 {
@@ -589,8 +653,8 @@
   &__level {
     order: 1;
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
 
     display: flex;
     justify-content: center;
@@ -598,6 +662,7 @@
     flex-direction: column;
 
     @include vp-767 {
+      padding-right: 5px;
       position: relative;
       width: 45px;
       height: 45px;
@@ -605,10 +670,13 @@
   }
 
   &__level-text {
+    padding-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
-    z-index: 1;
 
     &::after {
       content: "level";
@@ -616,10 +684,11 @@
       font-size: 14px;
       line-height: 100%;
       text-decoration: overline;
-      z-index: 1;
+      opacity: 0.4;
     }
 
     @include vp-767 {
+      padding-top: 0;
       order: 1;
 
       &::after {
@@ -629,22 +698,39 @@
   }
 
   &__level-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+
+    @include vp-767 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+    }
+
     svg {
-      position: absolute;
-      width: 60px;
-      height: 60px;
+      --color: #4d99d6;
+
       inset: 0;
 
-      @include vp-767 {
-        width: 45px;
-        height: 45px;
+      @include vp-1023 {
+        --color: #ff8d30;
       }
     }
   }
 
   &__transport {
+    padding-top: 10px;
+
+    @include vp-1023 {
+      padding: 0;
+    }
+
     @include vp-767 {
       margin-bottom: 7px;
+      padding-top: 3px;
     }
 
     span {
@@ -660,16 +746,18 @@
     list-style-type: none;
 
     display: flex;
-    gap: 14px;
+    gap: 12px;
 
     @include vp-1023 {
       margin-top: 5px;
+      margin-left: 5px;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
     }
 
     @include vp-767 {
-      margin-top: 14px;
+      margin-top: 17px;
+      margin-left: 0;
       flex-direction: row;
       gap: 1px;
 
@@ -681,8 +769,49 @@
         align-items: center;
         border-radius: 50%;
         background-color: $color-solitude;
+
+        svg {
+          width: 14px;
+          height: 16px;
+        }
       }
     }
+  }
+
+  &__transport-item {
+    position: relative;
+
+    &:hover .candidates__tooltip {
+      display: flex;
+    }
+  }
+
+  &__tooltip {
+    padding-top: 0;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    bottom: -54px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    svg {
+      width: 14px;
+      height: 8px;
+    }
+  }
+
+  &__tooltip-text {
+    padding: 18px 14px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: $color-default-white;
+    background-color: #101d41;
+    border-radius: 4px;
   }
 
   &__pagination {
@@ -696,7 +825,7 @@
 
 
   &__pagination-plus {
-    margin-right: 20px;
+    margin-right: 8px;
     position: relative;
     justify-self: center;
 
@@ -716,20 +845,21 @@
     &::before {
       content: "+";
       position: absolute;
-      left: -50px;
+      left: -48px;
       top: -2px;
       font-weight: 300;
       font-size: 48px;
     }
 
     @include vp-767 {
+      margin-left: 42px;
       margin-bottom: 18px;
       font-size: 17px;
       line-height: 176%;
 
       &::before {
         top: -1px;
-        left: -39px;
+        left: -32px;
         font-size: 34px;
       }
     }
@@ -741,7 +871,7 @@
   }
 
   &__buttons-page {
-    padding: 26px 29px 24px;
+    padding: 26px 18px 24px 29px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -749,6 +879,7 @@
     border-radius: 20px;
 
     @include vp-1023 {
+      padding-top: 29px;
       padding-right: 15px;
     }
 
@@ -770,9 +901,25 @@
   }
 
   &__arrows {
+    @include vp-1023 {
+      max-width: 96px;
+    }
+
     @include vp-767 {
       width: 100%;
+      max-width: 100%;
       justify-content: space-around;
+    }
+  }
+
+  &__page,
+  &__arrow {
+    @include hover-focus {
+      opacity: 0.6;
+    }
+
+    &:hover:active {
+      opacity: 0.3;
     }
   }
 

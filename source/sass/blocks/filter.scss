@@ -18,7 +18,7 @@
     z-index: 1;
 
     @include vp-1023 {
-      left: 34px;
+      left: 74px;
     }
 
     @include vp-767 {
@@ -69,6 +69,7 @@
   &__toggle {
     &--close {
       margin-top: 66px;
+      padding-right: 15px;
       height: 100px;
       display: flex;
       align-items: center;
@@ -98,8 +99,8 @@
       }
 
       svg {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         order: -1;
       }
     }

@@ -18,7 +18,7 @@
   .container {
     padding-left: 59px;
     padding-right: 60px;
-    padding-top: 17px;
+    padding-top: 18px;
 
     @include vp-1279 {
       padding: 0 40px;
@@ -36,9 +36,13 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: minmax(700px, 76%) minmax(13%, 285px);
+    grid-template-columns: minmax(70%, 951px) 285px;
     justify-content: space-between;
-    gap: 1%;
+    column-gap: 20px;
+
+    @include vp-1279 {
+      grid-template-columns: minmax(75%, 951px) 230px;
+    }
 
     @include vp-1023 {
       grid-template-columns: 100%;
