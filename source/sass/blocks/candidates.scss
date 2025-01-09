@@ -59,7 +59,7 @@
     @include vp-767 {
       position: relative;
       padding: 14px 20px 23px 18px;
-      max-width: 270px;
+      max-width: 100%;
       min-height: 393px;
       grid-template-columns: 70px 1fr;
       grid-template-rows: 70px 36px min-content auto;
@@ -308,7 +308,7 @@
       color: $color-default-black;
 
       @include vp-767 {
-        width: 200px;
+        width: 100%;
         font-size: 15px;
         line-height: 120%;
       }
@@ -320,6 +320,7 @@
     }
 
     @include vp-767 {
+      width: 100%;
       grid-column: 1/-1;
     }
   }
@@ -370,7 +371,7 @@
     @include vp-767 {
       margin: 0 auto;
       text-align: center;
-      width: 230px;
+      width: 100%;
       height: 40px;
       font-size: 17px;
     }
@@ -641,6 +642,7 @@
     }
 
     @include vp-767 {
+      max-width: 100%;
       position: relative;
       grid-column: 1/-1;
       grid-row: 4/5;

@@ -13,9 +13,9 @@ const initRangeSlider = () => {
         min: 0,
         max: 100,
       },
-      start: 30,
+      start: 100,
       step: 1,
-      connect: 'upper',
+      connect: 'lower',
       format: {
         to(value) {
           return value;

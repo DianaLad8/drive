@@ -394,8 +394,14 @@
     }
   }
 
-  &__item--transport:hover .selection__tooltip {
-    display: flex;
+  &__item--transport:hover {
+    label {
+      cursor: pointer;
+    }
+
+    .selection__tooltip {
+      display: flex;
+    }
   }
 
   &__checkbox-transport {
@@ -430,7 +436,11 @@
     }
 
     input {
-      width: 0;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+
+      clip: rect(0 0 0 0);
     }
 
     .selection__transport-icon {
@@ -522,8 +532,9 @@
   }
 
   &__label {
+    order: 1;
     position: relative;
-    border-right: 1px solid #cbced9;
+    border-left: 1px solid #cbced9;
 
     &::before {
       content: "";
@@ -531,7 +542,7 @@
       height: 1px;
       width: 20px;
       top: 50%;
-      right: -10px;
+      left: -10px;
       background-color: #cbced9;
       z-index: 1;
     }
@@ -542,7 +553,7 @@
       height: 15px;
       width: 20px;
       top: 35%;
-      right: -10px;
+      left: -10px;
       background-color: $color-default-white;
     }
   }
@@ -586,7 +597,7 @@
       content: "";
       position: absolute;
       top: 50%;
-      right: 0;
+      left: 30%;
       height: 13px;
       width: 13px;
       border-radius: 20px;
@@ -604,11 +615,10 @@
       width: 100%;
       order: 0;
 
-      &::before {
-        width: 10px;
-        height: 10px;
-        // right: 27px;
-      }
+      // &::before {
+      //   width: 10px;
+      //   height: 10px;
+      // }
     }
   }
 

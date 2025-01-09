@@ -85,7 +85,7 @@
     list-style-type: none;
 
     display: grid;
-    gap: 11px;
+    gap: 17px;
 
     @include vp-1023 {
       padding-top: 28px;
@@ -124,7 +124,8 @@
       content: counter(tarif) "";
       position: absolute;
       left: -95px;
-      bottom: -7px;
+      top: 0;
+      // bottom: -7px;
       width: 72px;
       height: 70px;
       padding-top: 20px;
@@ -165,7 +166,7 @@
     border-top: 1px solid $color-solitude-second;
 
     &::before {
-      bottom: 0;
+      top: 17px;
     }
 
     @include vp-767 {
@@ -176,10 +177,6 @@
   &__tarif:last-child {
     padding-bottom: 18px;
     border-bottom: 1px solid $color-solitude-second;
-
-    &::before {
-      bottom: 0;
-    }
 
     @include vp-767 {
       padding-bottom: 0;

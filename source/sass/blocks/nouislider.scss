@@ -21,6 +21,7 @@
  }
  .noUi-base,
  .noUi-connects {
+  padding-left: 30%;
    width: 100%;
    height: 100%;
    position: relative;
@@ -47,9 +48,9 @@
    transform-origin: 0 0;
    transform-style: flat;
 
-   @include vp-1023 {
-    right: -22px;
-  }
+  //  @include vp-1023 {
+  //   right: -22px;
+  // }
  }
  /* Offset direction
   */
@@ -92,7 +93,7 @@
  .noUi-horizontal .noUi-handle {
    width: 13px;
    height: 13px;
-   right: -9px;
+   right: 0;
    top: -6px;
    transition: transform $trans-default;
 
@@ -105,6 +106,7 @@
 
   @include hover-focus {
     transform: scale(1.5);
+    cursor: pointer;
   }
 
   &:hover:active {
