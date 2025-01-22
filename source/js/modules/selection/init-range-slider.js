@@ -2,20 +2,18 @@ import noUiSlider from 'nouislider';
 
 const catalogPade = document.querySelector('[data-catalog]');
 
-
 const initRangeSlider = () => {
   if (catalogPade) {
-    const sliderElement = catalogPade.querySelector('.selection__slider');
-    const rangeValue = catalogPade.querySelector('[data-range-value]');
+    const selectionSlider = catalogPade.querySelector('[data-selection-slider]');
 
-    noUiSlider.create(sliderElement, {
+    noUiSlider.create(selectionSlider, {
       range: {
         min: 0,
         max: 100,
       },
-      start: 100,
+      start: [30, 100],
       step: 1,
-      connect: 'lower',
+      connect: true,
       format: {
         to(value) {
           return value;
@@ -26,16 +24,25 @@ const initRangeSlider = () => {
       },
     });
 
+    const inputMin = document.querySelector('[data-input-min]');
+    const inputMax = document.querySelector('[data-input-max]');
 
-    sliderElement.noUiSlider.on('update', (...rest) => {
-      rangeValue.value = sliderElement.noUiSlider.get();
+    selectionSlider.noUiSlider.on('update', function (values, handle) {
+      let value = values[handle];
+
+      if (handle) {
+        inputMax.value = value;
+      } else {
+        inputMin.value = value;
+      }
     });
 
-    rangeValue.addEventListener('click', () => {
-      rangeValue.value = '';
-      rangeValue.addEventListener('input', () => {
-        sliderElement.noUiSlider.set(rangeValue.value);
-      });
+    inputMax.addEventListener('change', function () {
+      selectionSlider.noUiSlider.set([null, this.value]);
+    });
+
+    inputMin.addEventListener('change', function () {
+      selectionSlider.noUiSlider.set([this.value, null]);
     });
   }
 };
